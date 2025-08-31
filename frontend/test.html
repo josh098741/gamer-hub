@@ -3,302 +3,452 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameHost Tournaments - Compete. Win. Dominate.</title>
+    <title>Tournament Bracket Tree</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/frontend/src/css/test.css">
     <style>
-       
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #4ecca3;
+            text-shadow: 0 2px 10px rgba(78, 204, 163, 0.3);
+        }
+        
+        .subtitle {
+            color: #c5c5c5;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            background: #4ecca3;
+            color: #1a1a2e;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn:hover {
+            background: #38b592;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #4ecca3;
+            color: #4ecca3;
+        }
+        
+        .btn-outline:hover {
+            background: rgba(78, 204, 163, 0.1);
+        }
+        
+        .bracket-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 20px;
+            overflow-x: auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .bracket-tree {
+            display: flex;
+            min-width: 900px;
+        }
+        
+        .round {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            min-height: 600px;
+        }
+        
+        .round-title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #4ecca3;
+            font-size: 1.2rem;
+            position: sticky;
+            left: 0;
+        }
+        
+        .matchup {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            margin: 10px 0;
+            padding: 15px;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .matchup:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-2px);
+        }
+        
+        .participant {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            margin: 8px 0;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+        
+        .participant.winner {
+            background: rgba(78, 204, 163, 0.15);
+            border-left: 4px solid #4ecca3;
+        }
+        
+        .participant:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .seed {
+            background: #4ecca3;
+            color: #1a1a2e;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.8rem;
+            margin-right: 12px;
+        }
+        
+        .participant-name {
+            flex: 1;
+            font-weight: 500;
+        }
+        
+        .score {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+            min-width: 35px;
+            text-align: center;
+        }
+        
+        .winner .score {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .connectors {
+            position: relative;
+        }
+        
+        .connector {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .horizontal-connector {
+            height: 2px;
+            width: 30px;
+            top: 50%;
+            right: -30px;
+        }
+        
+        .vertical-connector {
+            width: 2px;
+            height: 100%;
+            top: 0;
+            right: -30px;
+        }
+        
+        .round-2 .matchup {
+            margin: 50px 0;
+        }
+        
+        .round-3 .matchup {
+            margin: 130px 0;
+        }
+        
+        .final-match {
+            background: linear-gradient(135deg, rgba(78, 204, 163, 0.2) 0%, rgba(78, 204, 163, 0.05) 100%);
+            border: 1px solid rgba(78, 204, 163, 0.3);
+        }
+        
+        .champion {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+        }
+        
+        .champion .participant {
+            justify-content: center;
+            flex-direction: column;
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(78, 204, 163, 0.2) 0%, rgba(78, 204, 163, 0.05) 100%);
+            border: 1px solid rgba(78, 204, 163, 0.3);
+        }
+        
+        .trophy {
+            font-size: 2.5rem;
+            color: gold;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .bracket-container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Header & Navigation -->
-    <header>
-        <nav>
-            <div class="logo">
-                <i class="fas fa-gamepad"></i>
-                Game<span>Host</span>
-            </div>
+    <div class="container">
+        <header>
+            <h1>Tournament Bracket</h1>
+            <p class="subtitle">Season 3 Championship Finals</p>
             
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Tournaments</a></li>
-                <li><a href="#">Games</a></li>
-                <li><a href="#">Leaderboards</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-            
-            <div class="auth-buttons">
-                <a href="#" class="btn btn-login">Login</a>
-                <a href="#" class="btn btn-register">Register</a>
+            <div class="controls">
+                <button class="btn">
+                    <i class="fas fa-download"></i> Export Bracket
+                </button>
+                <button class="btn btn-outline">
+                    <i class="fas fa-share-alt"></i> Share
+                </button>
+                <button class="btn btn-outline">
+                    <i class="fas fa-cog"></i> Settings
+                </button>
             </div>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Compete. Win. Dominate.</h1>
-            <p>Join thousands of gamers in competitive tournaments with massive prize pools. Show off your skills, climb the leaderboards, and claim your glory!</p>
-            <div>
-                <a href="#" class="btn btn-large">View Tournaments</a>
-                <a href="#" class="btn btn-large" style="background: transparent; border: 2px solid var(--accent);">How It Works</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Tournaments -->
-    <section class="tournaments">
-        <h2 class="section-title">Featured Tournaments</h2>
+        </header>
         
-        <div class="tournament-grid">
-            <!-- Tournament Card 1 -->
-            <div class="tournament-card">
-                <div class="card-header">
-                    <h3>VALORANT</h3>
-                    <img src="https://images.unsplash.com/photo-1614687153862-b0e115ebcef1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="VALORANT">
-                </div>
-                <div class="card-body">
-                    <h4 class="game-title">Champions Showdown</h4>
-                    <p>5v5 Tournament • Round Robin Format</p>
+        <div class="bracket-container">
+            <div class="bracket-tree">
+                <!-- Round 1 -->
+                <div class="round round-1">
+                    <h3 class="round-title">Round of 16</h3>
                     
-                    <div class="tournament-details">
-                        <div class="detail">
-                            <i class="far fa-calendar-alt"></i>
-                            <span>June 25, 2023</span>
+                    <div class="matchup">
+                        <div class="participant winner">
+                            <div class="seed">1</div>
+                            <div class="participant-name">Team Phoenix</div>
+                            <div class="score">3</div>
                         </div>
-                        <div class="detail">
-                            <i class="far fa-clock"></i>
-                            <span>7:00 PM EST</span>
+                        <div class="participant">
+                            <div class="seed">16</div>
+                            <div class="participant-name">Dragons</div>
+                            <div class="score">1</div>
                         </div>
-                        <div class="detail">
-                            <i class="fas fa-trophy"></i>
-                            <span class="prize">$5,000</span>
+                        <div class="connectors">
+                            <div class="connector horizontal-connector"></div>
                         </div>
                     </div>
-                </div>
-                <div class="card-footer">
-                    <div class="participants">
-                        <div class="participant"></div>
-                        <div class="participant"></div>
-                        <div class="participant"></div>
-                        <div class="participant">+32</div>
-                    </div>
-                    <a href="#" class="btn btn-register">Join Now</a>
-                </div>
-            </div>
-            
-            <!-- Tournament Card 2 -->
-            <div class="tournament-card">
-                <div class="card-header">
-                    <h3>Fortnite</h3>
-                    <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Fortnite">
-                </div>
-                <div class="card-body">
-                    <h4 class="game-title">Battle Royale Cup</h4>
-                    <p>Solo Tournament • Elimination Format</p>
                     
-                    <div class="tournament-details">
-                        <div class="detail">
-                            <i class="far fa-calendar-alt"></i>
-                            <span>June 28, 2023</span>
+                    <div class="matchup">
+                        <div class="participant">
+                            <div class="seed">8</div>
+                            <div class="participant-name">Shadow Clan</div>
+                            <div class="score">2</div>
                         </div>
-                        <div class="detail">
-                            <i class="far fa-clock"></i>
-                            <span>6:30 PM EST</span>
+                        <div class="participant winner">
+                            <div class="seed">9</div>
+                            <div class="participant-name">Night Wolves</div>
+                            <div class="score">3</div>
                         </div>
-                        <div class="detail">
-                            <i class="fas fa-trophy"></i>
-                            <span class="prize">$3,500</span>
+                        <div class="connectors">
+                            <div class="connector horizontal-connector"></div>
                         </div>
                     </div>
-                </div>
-                <div class="card-footer">
-                    <div class="participants">
-                        <div class="participant"></div>
-                        <div class="participant"></div>
-                        <div class="participant"></div>
-                        <div class="participant">+45</div>
-                    </div>
-                    <a href="#" class="btn btn-register">Join Now</a>
-                </div>
-            </div>
-            
-            <!-- Tournament Card 3 -->
-            <div class="tournament-card">
-                <div class="card-header">
-                    <h3>League of Legends</h3>
-                    <img src="https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="League of Legends">
-                </div>
-                <div class="card-body">
-                    <h4 class="game-title">Summoner's Rift Clash</h4>
-                    <p>5v5 Tournament • Single Elimination</p>
                     
-                    <div class="tournament-details">
-                        <div class="detail">
-                            <i class="far fa-calendar-alt"></i>
-                            <span>July 2, 2023</span>
+                    <div class="matchup">
+                        <div class="participant winner">
+                            <div class="seed">5</div>
+                            <div class="participant-name">Storm Riders</div>
+                            <div class="score">3</div>
                         </div>
-                        <div class="detail">
-                            <i class="far fa-clock"></i>
-                            <span>5:00 PM EST</span>
+                        <div class="participant">
+                            <div class="seed">12</div>
+                            <div class="participant-name">Ice Warriors</div>
+                            <div class="score">0</div>
                         </div>
-                        <div class="detail">
-                            <i class="fas fa-trophy"></i>
-                            <span class="prize">$7,200</span>
+                        <div class="connectors">
+                            <div class="connector horizontal-connector"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="matchup">
+                        <div class="participant winner">
+                            <div class="seed">4</div>
+                            <div class="participant-name">Titan Slayers</div>
+                            <div class="score">3</div>
+                        </div>
+                        <div class="participant">
+                            <div class="seed">13</div>
+                            <div class="participant-name">Dark Angels</div>
+                            <div class="score">1</div>
+                        </div>
+                        <div class="connectors">
+                            <div class="connector horizontal-connector"></div>
                         </div>
                     </div>
                 </div>
-                <div class="card-footer">
-                    <div class="participants">
-                        <div class="participant"></div>
-                        <div class="participant"></div>
-                        <div class="participant"></div>
-                        <div class="participant">+28</div>
+                
+                <!-- Round 2 -->
+                <div class="round round-2">
+                    <h3 class="round-title">Quarter Finals</h3>
+                    
+                    <div class="matchup">
+                        <div class="participant winner">
+                            <div class="seed">1</div>
+                            <div class="participant-name">Team Phoenix</div>
+                            <div class="score">3</div>
+                        </div>
+                        <div class="participant">
+                            <div class="seed">9</div>
+                            <div class="participant-name">Night Wolves</div>
+                            <div class="score">2</div>
+                        </div>
+                        <div class="connectors">
+                            <div class="connector horizontal-connector"></div>
+                            <div class="connector vertical-connector" style="height: 200px; top: -75px;"></div>
+                        </div>
                     </div>
-                    <a href="#" class="btn btn-register">Join Now</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How it Works -->
-    <section class="how-it-works">
-        <h2 class="section-title">How It Works</h2>
-        
-        <div class="steps">
-            <div class="step">
-                <div class="step-number">1</div>
-                <i class="fas fa-user-plus"></i>
-                <h3>Create Account</h3>
-                <p>Sign up for free and complete your gaming profile</p>
-            </div>
-            
-            <div class="step">
-                <div class="step-number">2</div>
-                <i class="fas fa-trophy"></i>
-                <h3>Join Tournament</h3>
-                <p>Browse available tournaments and register for your favorites</p>
-            </div>
-            
-            <div class="step">
-                <div class="step-number">3</div>
-                <i class="fas fa-gamepad"></i>
-                <h3>Compete</h3>
-                <p>Show off your skills and climb the leaderboards</p>
-            </div>
-            
-            <div class="step">
-                <div class="step-number">4</div>
-                <i class="fas fa-money-bill-wave"></i>
-                <h3>Win Prizes</h3>
-                <p>Claim your rewards and establish your reputation</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Upcoming Tournaments -->
-    <section class="upcoming">
-        <h2 class="section-title">Upcoming Tournaments</h2>
-        
-        <div class="countdown">
-            <h3>Next Big Tournament Starts In:</h3>
-            
-            <div class="countdown-timer">
-                <div class="time-unit">
-                    <div class="time-value">12</div>
-                    <div class="time-label">Days</div>
+                    
+                    <div class="matchup">
+                        <div class="participant">
+                            <div class="seed">5</div>
+                            <div class="participant-name">Storm Riders</div>
+                            <div class="score">1</div>
+                        </div>
+                        <div class="participant winner">
+                            <div class="seed">4</div>
+                            <div class="participant-name">Titan Slayers</div>
+                            <div class="score">3</div>
+                        </div>
+                        <div class="connectors">
+                            <div class="connector horizontal-connector"></div>
+                            <div class="connector vertical-connector" style="height: 200px; top: -75px;"></div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="time-unit">
-                    <div class="time-value">18</div>
-                    <div class="time-label">Hours</div>
+                <!-- Round 3 -->
+                <div class="round round-3">
+                    <h3 class="round-title">Semi Finals</h3>
+                    
+                    <div class="matchup">
+                        <div class="participant winner">
+                            <div class="seed">1</div>
+                            <div class="participant-name">Team Phoenix</div>
+                            <div class="score">3</div>
+                        </div>
+                        <div class="participant">
+                            <div class="seed">4</div>
+                            <div class="participant-name">Titan Slayers</div>
+                            <div class="score">2</div>
+                        </div>
+                        <div class="connectors">
+                            <div class="connector horizontal-connector"></div>
+                            <div class="connector vertical-connector" style="height: 400px; top: -175px;"></div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="time-unit">
-                    <div class="time-value">45</div>
-                    <div class="time-label">Minutes</div>
-                </div>
-                
-                <div class="time-unit">
-                    <div class="time-value">32</div>
-                    <div class="time-label">Seconds</div>
-                </div>
-            </div>
-            
-            <a href="#" class="btn btn-large">Register Now</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h3>GameHost</h3>
-                <p>The ultimate platform for competitive gaming tournaments. Join our community of professional and amateur gamers.</p>
-                
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-discord"></i></a>
-                    <a href="#"><i class="fab fa-twitch"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+                <!-- Final Round -->
+                <div class="round round-4">
+                    <h3 class="round-title">Finals</h3>
+                    
+                    <div class="matchup final-match">
+                        <div class="participant winner">
+                            <div class="seed">1</div>
+                            <div class="participant-name">Team Phoenix</div>
+                            <div class="score">4</div>
+                        </div>
+                        <div class="participant">
+                            <div class="seed">2</div>
+                            <div class="participant-name">Lightning Strikes</div>
+                            <div class="score">2</div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Tournaments</a></li>
-                    <li><a href="#">Leaderboards</a></li>
-                    <li><a href="#">News & Updates</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h3>Supported Games</h3>
-                <ul>
-                    <li><a href="#">VALORANT</a></li>
-                    <li><a href="#">League of Legends</a></li>
-                    <li><a href="#">Fortnite</a></li>
-                    <li><a href="#">CS:GO</a></li>
-                    <li><a href="#">Dota 2</a></li>
-                    <li><a href="#">Overwatch 2</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h3>Contact Us</h3>
-                <ul>
-                    <li><i class="fas fa-envelope"></i> support@gamehost.com</li>
-                    <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
-                </ul>
+            <div class="champion">
+                <div class="trophy"><i class="fas fa-trophy"></i></div>
+                <h2>Champion</h2>
+                <div class="participant winner">
+                    <div class="seed">1</div>
+                    <div class="participant-name">Team Phoenix</div>
+                </div>
             </div>
         </div>
-        
-        <div class="copyright">
-            <p>&copy; 2023 GameHost Tournaments. All rights reserved.</p>
-        </div>
-    </footer>
+    </div>
 
     <script>
-        // Simple countdown timer animation
+        // Simple animation for the bracket
         document.addEventListener('DOMContentLoaded', function() {
-            const timeValues = document.querySelectorAll('.time-value');
+            const participants = document.querySelectorAll('.participant');
             
-            function animateCountdown() {
-                timeValues.forEach(value => {
-                    let currentValue = parseInt(value.textContent);
-                    value.textContent = currentValue - 1;
-                    
-                    if (currentValue <= 0) {
-                        value.textContent = 59;
-                    }
+            participants.forEach(participant => {
+                participant.addEventListener('click', function() {
+                    this.classList.toggle('highlight');
                 });
-            }
+            });
             
-            setInterval(animateCountdown, 1000);
+            // Animate the bracket on load
+            setTimeout(() => {
+                document.body.classList.add('loaded');
+            }, 500);
         });
     </script>
 </body>
