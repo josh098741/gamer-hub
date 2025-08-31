@@ -1,0 +1,467 @@
+:root {
+    --primary: #6c5ce7;
+    --secondary: #a29bfe;
+    --accent: #fd79a8;
+    --dark: #0f1123;
+    --light: #ffffff;
+    --gray: #dfe6e9;
+    --success: #00b894;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--light);
+    overflow-x: hidden;
+}
+
+/* Header & Navigation */
+header {
+    background-color: rgba(15, 17, 35, 0.9);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--light);
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.logo i {
+    margin-right: 10px;
+    color: var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 1rem;
+}
+
+.nav-links a {
+    color: var(--light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.6rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-login {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--light);
+}
+
+.btn-login:hover {
+    background: var(--primary);
+}
+
+.btn-register {
+    background: var(--primary);
+    border: 2px solid var(--primary);
+    color: var(--light);
+}
+
+.btn-register:hover {
+    background: transparent;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin-top: 60px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to right, var(--light), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    color: var(--gray);
+}
+
+.btn-large {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    background: var(--accent);
+    border: none;
+    margin: 0 0.5rem;
+}
+
+.btn-large:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Featured Tournaments */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 4rem 0 2rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+.tournaments {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.tournament-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.tournament-card {
+    background: linear-gradient(145deg, #13152d, #0d0f25);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.tournament-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-header {
+    padding: 1.5rem;
+    background: var(--primary);
+    position: relative;
+}
+
+.card-header img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 3px solid var(--light);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.game-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.tournament-details {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.detail i {
+    font-size: 1.5rem;
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+}
+
+.prize {
+    color: gold;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.card-footer {
+    padding: 1rem 1.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.participants {
+    display: flex;
+}
+
+.participant {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid var(--dark);
+    margin-left: -10px;
+    background: var(--secondary);
+}
+
+.participant:first-child {
+    margin-left: 0;
+}
+
+/* How it Works */
+.how-it-works {
+    background: linear-gradient(to right, #13152d, #0d0f25);
+    padding: 5rem 2rem;
+    margin: 4rem 0;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 3rem auto 0;
+    flex-wrap: wrap;
+}
+
+.step {
+    text-align: center;
+    max-width: 250px;
+    padding: 2rem;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 1.5rem;
+}
+
+.step i {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+/* Upcoming Tournaments */
+.upcoming {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.countdown {
+    background: linear-gradient(145deg, #13152d, #0d0f25);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem auto;
+    text-align: center;
+    max-width: 800px;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.time-unit {
+    background: var(--primary);
+    padding: 1rem;
+    border-radius: 10px;
+    min-width: 80px;
+}
+
+.time-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.time-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+/* Footer */
+footer {
+    background: #0a0b1c;
+    padding: 4rem 2rem 2rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-column h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-column h3:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--primary);
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-column a {
+    color: var(--gray);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column a:hover {
+    color: var(--accent);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--dark);
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    background: var(--primary);
+    transform: translateY(-3px);
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .tournament-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .steps {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .step {
+        margin-bottom: 2rem;
+    }
+    
+    .countdown-timer {
+        flex-wrap: wrap;
+    }
+}

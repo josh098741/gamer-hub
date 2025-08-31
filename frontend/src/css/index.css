@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+:root {
+    --primary: #6c5ce7;
+    --secondary: #a29bfe;
+    --accent: #fd79a8;
+    --dark: #0f1123;
+    --light: #ffffff;
+    --gray: #dfe6e9;
+    --success: #00b894;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    background: linear-gradient(rgba(15, 17, 35, 0.9), rgba(15, 17, 35, 0.95)), url('https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    color: var(--light);
+}
+
+/* Header Styles */
+header {
+    height: auto;
+    width: 100%;
+    background: rgba(15, 17, 35, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    flex-wrap: wrap;
+}
+
+header .header-container .left-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-image img{
+    height: 50px;
+    width: auto;
+}
+
+.header-text h2 {
+    font-size: 1.2rem;
+    line-height: 1.2;
+}
+
+.header-text h2:first-child {
+    color: var(--primary);
+    font-weight: 800;
+}
+
+.header-text h2:last-child {
+    color: var(--light);
+    font-weight: 600;
+}
+
+.header-links{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.header-links a {
+    margin: 0.3rem;
+}
+
+.header-links .link{
+    padding: 0.6rem 1rem;
+    transition: all 0.3s ease;
+    border-radius: 30px;
+    color: var(--light);
+    font-weight: 600;
+    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.header-links .link:hover{
+    background: var(--primary);
+    color: var(--light);
+    transform: translateY(-2px);
+}
+
+/* Mobile Menu */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--light);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Main Content */
+main{
+    background: transparent;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin: 1rem 0;
+}
+
+.main-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, var(--light), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.2;
+}
+
+.main-text p {
+    color: var(--gray);
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    max-width: 600px;
+}
+
+.join-know button{
+    width: 200px;
+    height: 50px;
+    border-radius: 30px;
+    background: var(--accent);
+    color: var(--light);
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.join-know button:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    background: var(--primary);
+}
+
+/* Game Icons */
+.gamer-icons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.gamer-icons > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.gamer-icons > div:hover {
+    transform: translateY(-5px);
+}
+
+.image-container {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--primary);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.image-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-text {
+    margin-top: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--light);
+    text-align: center;
+}
+
+/* Featured Tournaments Section */
+.featured-tournaments {
+    padding: 2rem 1rem;
+    margin: 2rem 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: var(--light);
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+.tournament-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.tournament-card {
+    background: linear-gradient(145deg, #13152d, #0d0f25);
+    border-radius: 15px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.tournament-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    padding: 1rem;
+    background: var(--primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header h3 {
+    font-size: 1.2rem;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.game-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.tournament-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    min-width: 80px;
+}
+
+.detail i {
+    font-size: 1.2rem;
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+}
+
+.prize {
+    color: gold;
+    font-weight: 700;
+}
+
+.card-footer {
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-register {
+    padding: 0.6rem 1.2rem;
+    background: var(--primary);
+    color: var(--light);
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-register:hover {
+    background: var(--accent);
+}
+
+/* Footer */
+footer {
+    background: #0a0b1c;
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-column a {
+    color: var(--gray);
+    transition: color 0.3s;
+}
+
+.footer-column a:hover {
+    color: var(--accent);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--dark);
+    color: var(--light);
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    background: var(--primary);
+    transform: translateY(-3px);
+}
+
+.copyright {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+    
+    .header-links.active {
+        display: flex;
+    }
+    
+    .header-links a {
+        width: 100%;
+        margin: 0.2rem 0;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .main-text h1 {
+        font-size: 2rem;
+    }
+    
+    .gamer-icons {
+        gap: 0.5rem;
+    }
+    
+    .image-container {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-text h2 {
+        font-size: 1rem;
+    }
+    
+    .main-text h1 {
+        font-size: 1.8rem;
+    }
+    
+    .main-text p {
+        font-size: 0.9rem;
+    }
+    
+    .image-container {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .image-text {
+        font-size: 0.8rem;
+    }
+    
+    .tournament-card {
+        width: 100%;
+    }
+}
