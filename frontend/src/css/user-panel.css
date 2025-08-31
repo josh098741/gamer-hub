@@ -1,13 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
+:root {
+    --primary: #6c5ce7;
+    --secondary: #a29bfe;
+    --accent: #fd79a8;
+    --dark: #0f1123;
+    --light: #ffffff;
+    --gray: #dfe6e9;
+    --success: #00b894;
+}
+
 *{
     font-family: 'Poppins',sans-serif;
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+
 }
 
 body{
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header{
@@ -27,4 +42,103 @@ header img{
 
 header .header-content{
     color: white;
+}
+
+main{
+    flex: 1;
+}
+
+.main-content{
+    margin: 10px;
+    width: calc(100% - 20px);
+    background: gray;
+}
+
+footer {
+    background: linear-gradient(135deg, #0a0b1c, #141629);
+    padding: 3rem 2rem;
+    color: var(--light);
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 3rem;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.footer-column {
+    flex: 1 1 250px;
+    min-width: 200px;
+}
+
+.footer-column h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.6rem;
+}
+
+.footer-column a {
+    color: var(--gray);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: var(--accent);
+    padding-left: 6px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--light);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.social-links a:hover {
+    background: var(--accent);
+    transform: translateY(-5px) scale(1.1);
+}
+
+.copyright {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    color: var(--gray);
+    font-size: 0.95rem;
 }
