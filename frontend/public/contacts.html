@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Infinity Quest Labs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="/frontend/src/images/iql2.png">
+    <link rel="stylesheet" href="/frontend/src/css/contacts.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="/frontend/src/images/iql2.png" alt="Infinity Quest Labs Logo">
+                <h1>Infinity Quest Labs</h1>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="/frontend/index.html">Home</a></li>
+                    <li><a href="/frontend/public/contacts.html" class="current">Contact Us</a></li>
+                    <li><a href="/frontend/public/Support.html">Support Center</a></li>
+                    <li><a href="/frontend/public/faq.html">FAQ</a></li>
+                    <li><a href="/frontend/public/privacy.html">Privacy Policy</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2>Contact Us</h2>
+        <div class="card">
+            <p>We'd love to hear from you! Whether you have a question about our services, need technical support, or want to provide feedback, our team is ready to assist you.</p>
+            <p>Reach out to us through any of the following methods:</p>
+        </div>
+
+        <div class="contact-methods">
+            <div class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <h4>Email Us</h4>
+                <p>General Inquiries: infinityquestlabs@gmail.com</p>
+                <p>Support: infinityquestlabs@gmail.com</p>
+            </div>
+
+            <div class="contact-card">
+                <i class="fas fa-phone"></i>
+                <h4>Call Us</h4>
+                <p>Sales: +254 720060752</p>
+                <p>Support: +254 701903833</p>
+                <p>Mon-Fri: 9am-6pm GMT+</p>
+            </div>
+
+            <div class="contact-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h4>Visit Us</h4>
+                <p>Infinity Quest Labs</p>
+                <p>Nairobi juja</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Send Us a Message</h3>
+            <form>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Your email address" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select id="subject">
+                        <option value="">Select a subject</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="support">Technical Support</option>
+                        <option value="billing">Billing Question</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" placeholder="How can we help you?" required></textarea>
+                </div>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Infinity Quest Labs</h3>
+                    <p>Empowering students with cutting-edge tools and resources for academic success and beyond.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/frontend/index.html">Home</a></li>
+                        <li><a href="/frontend/public/contacts.html">Contact Us</a></li>
+                        <li><a href="/frontend/public/Support.html">Support</a></li>
+                        <li><a href="/frontend/public/faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="/frontend/public/privacy.html">Privacy Policy</a></li>
+                        <li><a href="/frontend/public/Terms-and-condition.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <ul>
+                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Infinity Quest Labs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle mobile menu
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+            
+            // Change icon based on menu state
+            const icon = this.querySelector('i');
+            if (nav.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('mainNav');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            if (!nav.contains(event.target) && !menuToggle.contains(event.target) && window.innerWidth <= 768) {
+                nav.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    </script>
+</body>
+</html>
