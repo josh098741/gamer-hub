@@ -52,7 +52,7 @@ googleLoginBtn.addEventListener("click",(event) => {
     .then((result) => {
         const user = result.user;
         alert("Google Login Successful! Welcome", + user.displayName);
-        window.location.href = "/frontend/public/user-panel.html";
+        window.location.href = "/user-panel.html";
     })
     .catch((error) => {
         console.error(error);
