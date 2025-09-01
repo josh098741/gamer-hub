@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/frontend/src/css/Login.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="icon" href="/frontend/src/images/iql2.png">
+        <title>Login | Infinity Quest Labs</title>
+    </head>
+
+    <body>
+        <div class="container">
+        <div class="login-header">
+            <h1>Welcome Back</h1>
+            <p>Login to your account</p>
+        </div>
+    
+        <form class="login-form" id="loginForm">
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <div class="error-message" id="email-error">Please enter a valid email address</div>
+            </div>
+        
+            <div class="input-group">
+                <label for="password">Password</label>
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" placeholder="Enter your password" required>
+                <div class="error-message" id="password-error">Password is required</div>
+            </div>
+        
+            <div class="remember-forgot">
+                <label>
+                    <input type="checkbox"> Remember me
+                </label>
+                <a href="#">Forgot Password?</a>
+            </div>
+        
+            <button type="submit" id="submit" class="btn">Login</button>
+            
+            <div class="separator">
+                <span>Or continue with</span>
+            </div>
+            
+            <div class="social-login">
+                <div class="social-btn google">
+                    <button id="google-login-btn"><i class="fab fa-google"></i>Google</button>
+                </div>
+            </div>
+        
+            <div class="register-link">
+                Don't have an account? <a href="/init-website/frontend/signup.html">Sign up now</a>
+            </div>
+        </form>
+    </div>
+        <script src="/backend/user-Login.js" type="module" defer></script>
+    </body>
+</html>
