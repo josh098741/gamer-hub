@@ -2,7 +2,7 @@
 <html lang="en-US">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, inital-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="stylesheet" href="/frontend/src/css/user-panel.css">
         <link rel="icon" href="/frontend/src/images/iql2.png">
@@ -14,7 +14,7 @@
         <header>
             <div class="header-content">
                 <div class="header-image">
-                    <img src="/frontend/src/images/iql2.png">
+                    <img src="/frontend/src/images/iql2.png" alt="Infinity Quest Labs Logo">
                 </div>
                 <div class="header-text">
                     <h2>Infinity Quest Labs</h2>
@@ -22,77 +22,282 @@
                 </div>
             </div>
         </header>
+        
+        <nav>
+            <div class="nav-container">
+                <div class="nav-links">
+                    <a href="#">Dashboard</a>
+                    <a href="#">Tournaments</a>
+                    <a href="#">Leaderboards</a>
+                    <a href="#">My Profile</a>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
 
         <main>
             <div class="main-content">
+                <!-- 🎮 Playstation Section -->
                 <div class="main-content-section">
                     <div class="main-text">
-                        <h3>Playstation</h3>
+                        <h3>Playstation | X-BOX |  PC</h3>
                     </div>
                     <div class="gamer-icons">
-                        <div class="call-of-duty">
-                            <div class="image-container">
-                                <img src="/frontend/src/images/call-of-duty.jpg" alt="Call of Duty">
+                        <a href="">
+                            <div class="game">
+                                <div class="image-container">
+                                    <img src="/frontend/src/images/call-of-duty.jpg" alt="Call of Duty">
+                                </div>
+                                <div class="image-text">Call of Duty</div>
                             </div>
-                            <div class="image-text">COD</div>
+                        </a>
+
+                        <a href="">
+                            <div class="game">
+                                <div class="image-container">
+                                    <img src="/frontend/src/images/fifa.jpg" alt="FIFA">
+                                </div>
+                                <div class="image-text">FIFA</div>
+                            </div>
+                        </a>
+                        
+                        <a href="">
+                            <div class="game">
+                                <div class="image-container">
+                                    <img src="/frontend/src/images/fortnite.jpg" alt="Fortnite">
+                                </div>
+                                <div class="image-text">Fortnite</div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="game">
+                                <div class="image-container">
+                                    <img src="/frontend/src/images/csgo.png" alt="CS:GO">
+                                </div>
+                                <div class="image-text">CS:GO</div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="game">
+                                <div class="image-container">
+                                    <img src="/frontend/src/images/rl.png" alt="Rocket League">
+                                </div>
+                                <div class="image-text">Rocket League</div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="game">
+                                <div class="image-container">
+                                    <img src="/frontend/src/images/lol.png" alt="League of Legends">
+                                </div>
+                                <div class="image-text">League of Legends</div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="game">
+                                <div class="image-container">
+                                    <img src="/frontend/src/images/mk.png" alt="Mortal Kombat">
+                                </div>
+                                <div class="image-text">Mortal Kombat</div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="game">
+                                <div class="image-container">
+                                    <img src="/frontend/src/images/street-fighter.png" alt="Street Fighter">
+                                </div>
+                                <div class="image-text">Street Fighter</div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="game">
+                                <div class="image-container">
+                                    <img src="/frontend/src/images/forza.png" alt="Street Fighter">
+                                </div>
+                                <div class="image-text">Forza Horizon 4</div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="game">
+                                <div class="image-container">
+                                    <img src="/frontend/src/images/gt8.png" alt="Street Fighter">
+                                </div>
+                                <div class="image-text">Grand Turismo</div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="game">
+                                <div class="image-container">
+                                    <img src="/frontend/src/images/street-fighter.png" alt="Street Fighter">
+                                </div>
+                                <div class="image-text">Street Fighter</div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="game">
+                                <div class="image-container">
+                                    <img src="/frontend/src/images/tk8.png" alt="Street Fighter">
+                                </div>
+                                <div class="image-text">Tekken</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 📱 Mobile Sports -->
+                <div class="main-content-section">
+                    <div class="main-text">
+                        <h3>Mobile Sports</h3>
+                    </div>
+                    <div class="gamer-icons">
+                        <div class="game">
+                            <div class="image-container">
+                                <img src="https://placehold.co/100x100/6c5ce7/FFFFFF?text=PUBGM" alt="PUBG Mobile">
+                            </div>
+                            <div class="image-text">PUBG Mobile</div>
                         </div>
-                        <div class="fifa">
+                        <div class="game">
                             <div class="image-container">
-                                <img src="/frontend/src/images/fifa.jpg" alt="FIFA">
+                                <img src="https://placehold.co/100x100/6c5ce7/FFFFFF?text=PUBGM" alt="PUBG Mobile">
                             </div>
-                            <div class="image-text">FIFA</div>
+                            <div class="image-text">Arena Of Valor</div>
                         </div>
-                        <div class="fortnite">
+                        <div class="game">
                             <div class="image-container">
-                                <img src="/frontend/src/images/fortnite.jpg" alt="Fortnite">
+                                <img src="https://placehold.co/100x100/6c5ce7/FFFFFF?text=PUBGM" alt="PUBG Mobile">
                             </div>
-                            <div class="image-text">FORTNITE</div>
+                            <div class="image-text">Crash Legends</div>
                         </div>
-                        <div class="cs-go">
+                        <div class="game">
                             <div class="image-container">
-                                <img src="/frontend/src/images/csgo.png" alt="CS:GO">
+                                <img src="https://placehold.co/100x100/6c5ce7/FFFFFF?text=PUBGM" alt="PUBG Mobile">
                             </div>
-                            <div class="image-text">CS-GO</div>
+                            <div class="image-text">Brawl Stars</div>
                         </div>
-                        <div class="cs-go">
+                        <div class="game">
                             <div class="image-container">
-                                <img src="/frontend/src/images/rl.png" alt="CS:GO">
+                                <img src="https://placehold.co/100x100/6c5ce7/FFFFFF?text=CODM" alt="COD Mobile">
                             </div>
-                            <div class="image-text">Rocket League</div>
+                            <div class="image-text">COD Mobile</div>
                         </div>
-                        <div class="cs-go">
+                        <div class="game">
                             <div class="image-container">
-                                <img src="/frontend/src/images/lol.png" alt="CS:GO">
+                                <img src="https://placehold.co/100x100/6c5ce7/FFFFFF?text=MLBB" alt="Mobile Legends">
                             </div>
-                            <div class="image-text">League of Legends</div>
+                            <div class="image-text">Mobile Legends</div>
                         </div>
-                        <div class="mortal-kombat">
+                        <div class="game">
                             <div class="image-container">
-                                <img src="/frontend/src/images/mk.png" alt="Mortal Kombat">
+                                <img src="https://placehold.co/100x100/6c5ce7/FFFFFF?text=CR" alt="Clash Royale">
                             </div>
-                            <div class="image-text">MK</div>
+                            <div class="image-text">Clash Royale</div>
                         </div>
-                        <div class="street-fighter">
+                        <div class="game">
                             <div class="image-container">
-                                <img src="/frontend/src/images/street-fighter.png" alt="Street Fighter">
+                                <img src="https://placehold.co/100x100/6c5ce7/FFFFFF?text=PO" alt="Pokémon GO">
                             </div>
-                            <div class="image-text">Street Fighter</div>
+                            <div class="image-text">Garena Free Fire</div>
+                        </div>
+                        <div class="game">
+                            <div class="image-container">
+                                <img src="https://placehold.co/100x100/6c5ce7/FFFFFF?text=WR" alt="Wild Rift">
+                            </div>
+                            <div class="image-text">8 Ball Pool</div>
                         </div>
                     </div>
                 </div>
+
+                <!-- ⚽ Physical Sports -->
                 <div class="main-content-section">
                     <div class="main-text">
-                        <h3>Mobile Sport</h3>
+                        <h3>Physical Sports</h3>
+                    </div>
+                    <div class="gamer-icons">
+                        <div class="game">
+                            <div class="image-container">
+                                <img src="https://placehold.co/100x100/6c5ce7/FFFFFF?text=BB" alt="Basketball">
+                            </div>
+                            <div class="image-text">Basketball</div>
+                        </div>
+                        <div class="game">
+                            <div class="image-container">
+                                <img src="https://placehold.co/100x100/6c5ce7/FFFFFF?text=FB" alt="Football">
+                            </div>
+                            <div class="image-text">Football</div>
+                        </div>
+                        <div class="game">
+                            <div class="image-container">
+                                <img src="https://placehold.co/100x100/6c5ce7/FFFFFF?text=TN" alt="Tennis">
+                            </div>
+                            <div class="image-text">Tennis</div>
+                        </div>
+                        <div class="game">
+                            <div class="image-container">
+                                <img src="https://placehold.co/100x100/6c5ce7/FFFFFF?text=VB" alt="Volleyball">
+                            </div>
+                            <div class="image-text">Volleyball</div>
+                        </div>
+                        <div class="game">
+                            <div class="image-container">
+                                <img src="https://placehold.co/100x100/6c5ce7/FFFFFF?text=SK8" alt="Skateboarding">
+                            </div>
+                            <div class="image-text">Skateboarding</div>
+                        </div>
+                        <div class="game">
+                            <div class="image-container">
+                                <img src="https://placehold.co/100x100/6c5ce7/FFFFFF?text=SWM" alt="Swimming">
+                            </div>
+                            <div class="image-text">Swimming</div>
+                        </div>
                     </div>
                 </div>
+
+                <!-- 🧩 Logical Sports -->
                 <div class="main-content-section">
                     <div class="main-text">
-                        <h3>Physical  Sports</h3>
+                        <h3>Logical Sports</h3>
                     </div>
-                </div>
-                <div class="main-content-section">
-                    <div class="main-text">
-                        <h3>Logical Sport</h3>
+                    <div class="gamer-icons">
+                        <div class="game">
+                            <div class="image-container">
+                                <img src="https://placehold.co/100x100/6c5ce7/FFFFFF?text=CH" alt="Chess">
+                            </div>
+                            <div class="image-text">Chess</div>
+                        </div>
+                        <div class="game">
+                            <div class="image-container">
+                                <img src="https://placehold.co/100x100/6c5ce7/FFFFFF?text=SC" alt="Scrabble">
+                            </div>
+                            <div class="image-text">Scrabble</div>
+                        </div>
+                        <div class="game">
+                            <div class="image-container">
+                                <img src="https://placehold.co/100x100/6c5ce7/FFFFFF?text=PK" alt="Poker">
+                            </div>
+                            <div class="image-text">Poker</div>
+                        </div>
+                        <div class="game">
+                            <div class="image-container">
+                                <img src="https://placehold.co/100x100/6c5ce7/FFFFFF?text=BG" alt="Backgammon">
+                            </div>
+                            <div class="image-text">Backgammon</div>
+                        </div>
+                        <div class="game">
+                            <div class="image-container">
+                                <img src="https://placehold.co/100x100/6c5ce7/FFFFFF?text=BR" alt="Bridge">
+                            </div>
+                            <div class="image-text">Bridge</div>
+                        </div>
+                        <div class="game">
+                            <div class="image-container">
+                                <img src="https://placehold.co/100x100/6c5ce7/FFFFFF?text=GO" alt="Go">
+                            </div>
+                            <div class="image-text">Go</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -101,11 +306,14 @@
         <footer>
             <div class="footer-content">
                 <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <p>Join our community of gamers and stay updated with the latest tournaments and events.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                         <a href="#"><i class="fab fa-tiktok"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
                     </div>
                 </div>
                 
@@ -132,7 +340,6 @@
                         <li><a href="#">Rocket League</a></li>
                         <li><a href="#">Street Fighter</a></li>
                         <li><a href="#">FIFA</a></li>
-                        <li><a href="#">Rocket League</a></li>
                     </ul>
                 </div>
             </div>
@@ -141,5 +348,22 @@
                 <p>&copy; 2025 IQL Gaming Hub. All rights reserved.</p>
             </div>
         </footer>
+
+        <script>
+            // Mobile menu toggle
+            document.getElementById('hamburger').addEventListener('click', function() {
+                document.querySelector('.nav-links').classList.toggle('active');
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                const nav = document.querySelector('nav');
+                const hamburger = document.getElementById('hamburger');
+                
+                if (!nav.contains(event.target) && document.querySelector('.nav-links').classList.contains('active')) {
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        </script>
     </body>
 </html>
