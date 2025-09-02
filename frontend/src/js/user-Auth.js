@@ -36,7 +36,7 @@ createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
     const user = userCredential.user;
     alert("Signup successful! Welcome " + user.email);
-    window.location.href = "./public/user-panel.html";
+    window.location.href = "/user-panel.html";
     })
     .catch((error) => {
     alert(error.message);

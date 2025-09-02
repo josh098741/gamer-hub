@@ -36,7 +36,7 @@ const submit = document.getElementById('submit');
         .then((userCredential) => {
         const user = userCredential.user;
         //alert("Login successful! Welcome " + user.email);
-        window.location.href = "/frontend/public/user-panel.html";
+        window.location.href = "/user-panel.html";
         })
         .catch((error) => {
         alert(error.message);

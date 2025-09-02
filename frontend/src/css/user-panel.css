@@ -65,6 +65,7 @@ nav {
     background-color: rgba(0, 0, 0, 0.2);
     padding: 0.5rem 1rem;
     margin-bottom: 1rem;
+    position: relative;
 }
 
 .nav-container {
@@ -78,6 +79,7 @@ nav {
 .nav-links {
     display: flex;
     gap: 1.5rem;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .nav-links a {
@@ -284,6 +286,21 @@ footer {
     .footer-content {
         grid-template-columns: repeat(3, 1fr);
     }
+    
+    .nav-links {
+        display: flex;
+        position: static;
+        width: auto;
+        background: none;
+        box-shadow: none;
+        flex-direction: row;
+        transform: none;
+        opacity: 1;
+    }
+    
+    .hamburger {
+        display: none;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -318,10 +335,14 @@ footer {
         gap: 1rem;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
         z-index: 100;
+        transform: translateY(-10px);
+        opacity: 0;
     }
     
     .nav-links.active {
         display: flex;
+        transform: translateY(0);
+        opacity: 1;
     }
     
     .hamburger {

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swimming Tournament Manager</title>
+    <link rel="stylesheet" href="../src/css/swimming.css">
+    <link rel="icon" href="../src/images/iql2.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header style="background: url(../src/images/swimming.png) center/cover no-repeat">
+        <div class="header-content">
+            <div class="header-img">
+                <img src="../src/images/iql2.png" alt="iql logo" style="background: white;">
+            </div>
+            <div class="header-text">
+                <h2>Infinity Quest Labs</h2>
+                <p>Professional Swimming Tournaments</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-content">
+            <div class="tournaments-available">
+                <h2 class="section-title">Current Championships</h2>
+                <div class="tournament-cards">
+                    <div class="tournament-card">
+                        <h3>Summer Swim Championship</h3>
+                        <div class="tournament-info">
+                            <span><i class="fas fa-swimmer"></i> 150 Participants</span>
+                            <span><i class="fas fa-calendar"></i> August 15-20, 2025</span>
+                        </div>
+                        <div class="tournament-prize">
+                            <i class="fas fa-trophy"></i> Prize: $25,000 + Medals
+                        </div>
+                        <button class="join-btn">Register Now</button>
+                    </div>
+                    
+                    <div class="tournament-card">
+                        <h3>National Open Water Cup</h3>
+                        <div class="tournament-info">
+                            <span><i class="fas fa-water"></i> 80 Participants</span>
+                            <span><i class="fas fa-calendar"></i> September 5-7, 2025</span>
+                        </div>
+                        <div class="tournament-prize">
+                            <i class="fas fa-trophy"></i> Prize: $15,000 + Trophy
+                        </div>
+                        <button class="join-btn">Register Now</button>
+                    </div>
+                    
+                    <div class="tournament-card">
+                        <h3>Junior Swimming League</h3>
+                        <div class="tournament-info">
+                            <span><i class="fas fa-users"></i> 120 Participants</span>
+                            <span><i class="fas fa-calendar"></i> October 10-12, 2025</span>
+                        </div>
+                        <div class="tournament-prize">
+                            <i class="fas fa-trophy"></i> Prize: $10,000 + Scholarships
+                        </div>
+                        <button class="join-btn">Register Now</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="leader-board">
+                <h2 class="section-title">Team Standings</h2>
+                <ul class="leaderboard-list">
+                    <li class="leaderboard-item">
+                        <span class="rank">1</span>
+                        <div class="team-info">
+                            <div class="team-name">...</div>
+                            <div class="team-stats">
+                                <span><span class="stats-label">G:</span> 0</span>
+                                <span><span class="stats-label">S:</span> 0</span>
+                                <span><span class="stats-label">B:</span> 0</span>
+                                <span><span class="stats-label">Pts:</span> 0</span>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="leaderboard-item">
+                        <span class="rank">2</span>
+                        <div class="team-info">
+                            <div class="team-name">...</div>
+                            <div class="team-stats">
+                                <span><span class="stats-label">G:</span> 0</span>
+                                <span><span class="stats-label">S:</span> 0</span>
+                                <span><span class="stats-label">B:</span> 0</span>
+                                <span><span class="stats-label">Pts:</span> 0</span>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="leaderboard-item">
+                        <span class="rank">3</span>
+                        <div class="team-info">
+                            <div class="team-name">...</div>
+                            <div class="team-stats">
+                                <span><span class="stats-label">G:</span> 0</span>
+                                <span><span class="stats-label">S:</span> 0</span>
+                                <span><span class="stats-label">B:</span> 0</span>
+                                <span><span class="stats-label">Pts:</span> 0</span>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="leaderboard-item">
+                        <span class="rank">4</span>
+                        <div class="team-info">
+                            <div class="team-name">...</div>
+                            <div class="team-stats">
+                                <span><span class="stats-label">G:</span> 0</span>
+                                <span><span class="stats-label">S:</span> 0</span>
+                                <span><span class="stats-label">B:</span> 0</span>
+                                <span><span class="stats-label">Pts:</span> 0</span>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="leaderboard-item">
+                        <span class="rank">5</span>
+                        <div class="team-info">
+                            <div class="team-name">...</div>
+                            <div class="team-stats">
+                                <span><span class="stats-label">G:</span> 0</span>
+                                <span><span class="stats-label">S:</span> 0</span>
+                                <span><span class="stats-label">B:</span> 0</span>
+                                <span><span class="stats-label">Pts:</span> 0</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="top-swimmers">
+            <h2 class="section-title">Top Swimmers</h2>
+            <ul class="swimmers-list">
+                <li class="swimmer-item">
+                    <span class="swimmer-rank">1</span>
+                    <div class="swimmer-info">
+                        <div class="swimmer-name">...</div>
+                        <div class="swimmer-stats">
+                            <span><span class="stats-label">Team:</span> ...</span>
+                            <span><span class="stats-label">Gold:</span> 0</span>
+                            <span><span class="stats-label">Silver:</span> 0</span>
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="swimmer-item">
+                    <span class="swimmer-rank">2</span>
+                    <div class="swimmer-info">
+                        <div class="swimmer-name">...</div>
+                        <div class="swimmer-stats">
+                            <span><span class="stats-label">Team:</span>...</span>
+                            <span><span class="stats-label">Gold:</span> 0</span>
+                            <span><span class="stats-label">Silver:</span> 0</span>
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="swimmer-item">
+                    <span class="swimmer-rank">3</span>
+                    <div class="swimmer-info">
+                        <div class="swimmer-name">...</div>
+                        <div class="swimmer-stats">
+                            <span><span class="stats-label">Team:</span>...</span>
+                            <span><span class="stats-label">Gold:</span> 0</span>
+                            <span><span class="stats-label">Silver:</span> 0</span>
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="swimmer-item">
+                    <span class="swimmer-rank">4</span>
+                    <div class="swimmer-info">
+                        <div class="swimmer-name">...</div>
+                        <div class="swimmer-stats">
+                            <span><span class="stats-label">Team:</span>...</span>
+                            <span><span class="stats-label">Gold:</span> 0</span>
+                            <span><span class="stats-label">Silver:</span> 0</span>
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="swimmer-item">
+                    <span class="swimmer-rank">5</span>
+                    <div class="swimmer-info">
+                        <div class="swimmer-name">...</div>
+                        <div class="swimmer-stats">
+                            <span><span class="stats-label">Team:</span> ...</span>
+                            <span><span class="stats-label">Gold:</span> 0</span>
+                            <span><span class="stats-label">Silver:</span> 0</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="upcoming-events">
+            <h2 class="section-title">Upcoming Events</h2>
+            <div class="event-cards">
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-type">Freestyle</div>
+                        <div class="event-distance">100m</div>
+                    </div>
+                    <div class="event-participants">
+                        <span><i class="fas fa-swimmer"></i> 8 Participants</span>
+                        <span><i class="fas fa-flag"></i> Qualifiers</span>
+                    </div>
+                    <div class="event-info">
+                        <span><i class="fas fa-calendar"></i> Aug 5, 2025</span>
+                        <span><i class="fas fa-map-marker-alt"></i> JKUAT Swimming Pool</span>
+                    </div>
+                    <div class="event-time">
+                        <i class="far fa-clock"></i> 10:00 AM
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-type">Butterfly</div>
+                        <div class="event-distance">200m</div>
+                    </div>
+                    <div class="event-participants">
+                        <span><i class="fas fa-swimmer"></i> 24 Participants</span>
+                        <span><i class="fas fa-flag"></i> Heats</span>
+                    </div>
+                    <div class="event-info">
+                        <span><i class="fas fa-calendar"></i> Aug 9, 2025</span>
+                        <span><i class="fas fa-map-marker-alt"></i> JKUAT Swimming Pool</span>
+                    </div>
+                    <div class="event-time">
+                        <i class="far fa-clock"></i> 9:30 AM
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-type">Backstroke</div>
+                        <div class="event-distance">100m</div>
+                    </div>
+                    <div class="event-participants">
+                        <span><i class="fas fa-swimmer"></i> 6 Participants</span>
+                        <span><i class="fas fa-flag"></i> Qualifiers</span>
+                    </div>
+                    <div class="event-info">
+                        <span><i class="fas fa-calendar"></i> Aug 13, 2025</span>
+                        <span><i class="fas fa-map-marker-alt"></i> JKUAT Swimming Pool</span>
+                    </div>
+                    <div class="event-time">
+                        <i class="far fa-clock"></i> 11:00 AM
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="featured-teams">
+            <h2 class="section-title">Featured Teams</h2>
+            <div class="teams-carousel">
+                <div class="team-item">
+                    <div class="team-logo-large">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <div class="team-details">
+                        <h3>Aqua Warriors</h3>
+                        <p>Gold: 0</p>
+                        <p>Points: 145</p>
+                        <button class="view-btn">View Team</button>
+                    </div>
+                </div>
+                
+                <div class="team-item">
+                    <div class="team-logo-large">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <div class="team-details">
+                        <h3>Wave Breakers</h3>
+                        <p>Gold: 0</p>
+                        <p>Points: 136</p>
+                        <button class="view-btn">View Team</button>
+                    </div>
+                </div>
+                
+                <div class="team-item">
+                    <div class="team-logo-large">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <div class="team-details">
+                        <h3>Dolphin Squad</h3>
+                        <p>Gold: 0</p>
+                        <p>Points: 0</p>
+                        <button class="view-btn">View Team</button>
+                    </div>
+                </div>
+                
+                <div class="team-item">
+                    <div class="team-logo-large">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <div class="team-details">
+                        <h3>Tidal Force</h3>
+                        <p>Gold: 0</p>
+                        <p>Points: 0</p>
+                        <button class="view-btn">View Team</button>
+                    </div>
+                </div>
+                
+                <div class="team-item">
+                    <div class="team-logo-large">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <div class="team-details">
+                        <h3>Marlin Racers</h3>
+                        <p>Gold: 0</p>
+                        <p>Points: 0</p>
+                        <button class="view-btn">View Team</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>About Swimming Tournament Manager</h3>
+                <p>Our platform helps you organize, schedule, and manage swimming competitions with ease. Keep track of events, swimmers, and standings all in one place.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/p/19UCbVnkjK/" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://youtube.com/@infinityquestlabs?si=DUTSP1enY4uz2Ris" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@infinityquestlabs5?_t=ZM-8ytaZW36Ps0&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/infinityQuestLabs/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="#">Home</a>
+                <a href="#">Events</a>
+                <a href="#">Schedule</a>
+                <a href="#">Swimmers</a>
+                <a href="#">Support</a>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p>
+                    <a href="mailto:infinityquestlabs@gmail.com">
+                        <i class="fas fa-envelope"></i> infinityquestlabs@gmail.com
+                    </a>
+                </p>
+                <p>
+                    <a href="tel:+254720060752">
+                        <i class="fas fa-phone"></i> +254 720060752
+                    </a>
+                </p>
+                <p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Nairobi+Juja" target="_blank">
+                        <i class="fas fa-map-marker-alt"></i> Nairobi Juja
+                    </a>
+                </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 Swimming Tournament Manager. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

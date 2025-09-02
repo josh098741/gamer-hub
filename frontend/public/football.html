@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Tournament Manager</title>
+    <link rel="icon" href="../src/images/iql2.png">
+    <link rel="stylesheet" href="../src/css/football.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header style="background: url(../src/images/football.png) center/cover no-repeat">
+        <div class="header-content">
+            <div class="header-img">
+                <img src="../src/images/iql2.png" alt="iql logo" style="background: white;">
+            </div>
+            <div class="header-text">
+                <h2>Infinity Quest Labs</h2>
+                <p>Professional Football Tournaments</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-content">
+            <div class="tournaments-available">
+                <h2 class="section-title">Current Tournaments</h2>
+                <div class="tournament-cards">
+                    <div class="tournament-card">
+                        <h3>Summer Football Championship</h3>
+                        <div class="tournament-info">
+                            <span><i class="fas fa-users"></i> 20 Teams</span>
+                            <span><i class="fas fa-calendar"></i> October 15-30, 2025</span>
+                        </div>
+                        <div class="tournament-prize">
+                            <i class="fas fa-trophy"></i> Prize: 15,000 KSH
+                        </div>
+                        <a href="https://wa.me/254720060752?text=I%20am%20registering%20for%20this%20game" target="_blank">
+                            <button style="background-color:#25D366; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer; font-size:16px;">
+                                Register via WhatsApp
+                            </button>
+                        </a>
+                    </div>
+                    
+                    <div class="tournament-card">
+                        <h3>Premier League Cup</h3>
+                        <div class="tournament-info">
+                            <span><i class="fas fa-users"></i> 16 Teams</span>
+                            <span><i class="fas fa-calendar"></i> September 1 - October 20, 2025</span>
+                        </div>
+                        <div class="tournament-prize">
+                            <i class="fas fa-trophy"></i> Prize: 12,000 KSH
+                        </div>
+                        <a href="https://wa.me/254720060752?text=I%20am%20registering%20for%20this%20game" target="_blank">
+                            <button style="background-color:#25D366; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer; font-size:16px;">
+                                Register via WhatsApp
+                            </button>
+                        </a>
+                    </div>
+                    
+                    <div class="tournament-card">
+                        <h3>5-a-Side Street Football</h3>
+                        <div class="tournament-info">
+                            <span><i class="fas fa-users"></i> 32 Teams</span>
+                            <span><i class="fas fa-calendar"></i> September 10, 2025</span>
+                        </div>
+                        <div class="tournament-prize">
+                            <i class="fas fa-trophy"></i> Prize: 8,000 KSH
+                        </div>
+                        <a href="https://wa.me/254720060752?text=I%20am%20registering%20for%20this%20game" target="_blank">
+                            <button style="background-color:#25D366; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer; font-size:16px;">
+                                Register via WhatsApp
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="leader-board">
+                <h2 class="section-title">League Standings</h2>
+                <ul class="leaderboard-list">
+                    <li class="leaderboard-item">
+                        <span class="rank">1</span>
+                        <div class="team-info">
+                            <div class="team-name">...</div>
+                            <div class="team-stats">
+                                <span><span class="stats-label">P:</span> 0</span>
+                                <span><span class="stats-label">W:</span> 0</span>
+                                <span><span class="stats-label">D:</span> 0</span>
+                                <span><span class="stats-label">L:</span> 0</span>
+                                <span><span class="stats-label">Pts:</span> 0</span>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="leaderboard-item">
+                        <span class="rank">2</span>
+                        <div class="team-info">
+                            <div class="team-name">...</div>
+                            <div class="team-stats">
+                                <span><span class="stats-label">P:</span> 0</span>
+                                <span><span class="stats-label">W:</span> 0</span>
+                                <span><span class="stats-label">D:</span> 0</span>
+                                <span><span class="stats-label">L:</span> 0</span>
+                                <span><span class="stats-label">Pts:</span> 0</span>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="leaderboard-item">
+                        <span class="rank">3</span>
+                        <div class="team-info">
+                            <div class="team-name">...</div>
+                            <div class="team-stats">
+                                <span><span class="stats-label">P:</span> 0</span>
+                                <span><span class="stats-label">W:</span> 0</span>
+                                <span><span class="stats-label">D:</span> 0</span>
+                                <span><span class="stats-label">L:</span> 0</span>
+                                <span><span class="stats-label">Pts:</span> 0</span>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="leaderboard-item">
+                        <span class="rank">4</span>
+                        <div class="team-info">
+                            <div class="team-name">...</div>
+                            <div class="team-stats">
+                                <span><span class="stats-label">P:</span> 0</span>
+                                <span><span class="stats-label">W:</span> 0</span>
+                                <span><span class="stats-label">D:</span> 0</span>
+                                <span><span class="stats-label">L:</span> 0</span>
+                                <span><span class="stats-label">Pts:</span> 0</span>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="leaderboard-item">
+                        <span class="rank">5</span>
+                        <div class="team-info">
+                            <div class="team-name">...</div>
+                            <div class="team-stats">
+                                <span><span class="stats-label">P:</span> 0</span>
+                                <span><span class="stats-label">W:</span> 0</span>
+                                <span><span class="stats-label">D:</span> 0</span>
+                                <span><span class="stats-label">L:</span> 0</span>
+                                <span><span class="stats-label">Pts:</span> 0</span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="leaderboard-item">
+                        <span class="rank">6</span>
+                        <div class="team-info">
+                            <div class="team-name">...</div>
+                            <div class="team-stats">
+                                <span><span class="stats-label">P:</span> 0</span>
+                                <span><span class="stats-label">W:</span> 0</span>
+                                <span><span class="stats-label">D:</span> 0</span>
+                                <span><span class="stats-label">L:</span> 0</span>
+                                <span><span class="stats-label">Pts:</span> 0</span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="leaderboard-item">
+                        <span class="rank">7</span>
+                        <div class="team-info">
+                            <div class="team-name">...</div>
+                            <div class="team-stats">
+                                <span><span class="stats-label">P:</span> 0</span>
+                                <span><span class="stats-label">W:</span> 0</span>
+                                <span><span class="stats-label">D:</span> 0</span>
+                                <span><span class="stats-label">L:</span> 0</span>
+                                <span><span class="stats-label">Pts:</span> 0</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="upcoming-matches">
+            <h2 class="section-title">Upcoming Matches</h2>
+            <div class="match-cards">
+                <div class="match-card">
+                    <div class="teams">
+                        <div class="team">
+                            <div class="team-logo"><i class="fas fa-futbol"></i></div>
+                            <div>FC Champions</div>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="team">
+                            <div class="team-logo"><i class="fas fa-futbol"></i></div>
+                            <div>Goal Masters</div>
+                        </div>
+                    </div>
+                    <div class="match-info">
+                        <span><i class="fas fa-calendar"></i> October 5, 2025</span>
+                        <span><i class="fas fa-map-marker-alt"></i> City Stadium</span>
+                    </div>
+                    <div class="match-time">
+                        <i class="far fa-clock"></i> 7:00 PM
+                    </div>
+                </div>
+                
+                <div class="match-card">
+                    <div class="teams">
+                        <div class="team">
+                            <div class="team-logo"><i class="fas fa-futbol"></i></div>
+                            <div>Net Rippers</div>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="team">
+                            <div class="team-logo"><i class="fas fa-futbol"></i></div>
+                            <div>Strikers United</div>
+                        </div>
+                    </div>
+                    <div class="match-info">
+                        <span><i class="fas fa-calendar"></i> October 9, 2025</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Sports Arena</span>
+                    </div>
+                    <div class="match-time">
+                        <i class="far fa-clock"></i> 6:30 PM
+                    </div>
+                </div>
+                
+                <div class="match-card">
+                    <div class="teams">
+                        <div class="team">
+                            <div class="team-logo"><i class="fas fa-futbol"></i></div>
+                            <div>Midfield Magicians</div>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="team">
+                            <div class="team-logo"><i class="fas fa-futbol"></i></div>
+                            <div>Defensive Walls</div>
+                        </div>
+                    </div>
+                    <div class="match-info">
+                        <span><i class="fas fa-calendar"></i> October 13, 2025</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Community Ground</span>
+                    </div>
+                    <div class="match-time">
+                        <i class="far fa-clock"></i> 8:00 PM
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="featured-teams">
+            <h2 class="section-title">Featured Teams</h2>
+            <div class="teams-carousel">
+                <div class="team-item">
+                    <div class="team-logo-large">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <div class="team-details">
+                        <h3>FC Champions</h3>
+                        <p>Record: 8-2-0</p>
+                        <p>Points: 26</p>
+                        <button class="view-btn">View Team</button>
+                    </div>
+                </div>
+                
+                <div class="team-item">
+                    <div class="team-logo-large">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <div class="team-details">
+                        <h3>Goal Masters</h3>
+                        <p>Record: 7-2-1</p>
+                        <p>Points: 23</p>
+                        <button class="view-btn">View Team</button>
+                    </div>
+                </div>
+                
+                <div class="team-item">
+                    <div class="team-logo-large">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <div class="team-details">
+                        <h3>Net Rippers</h3>
+                        <p>Record: 6-3-1</p>
+                        <p>Points: 21</p>
+                        <button class="view-btn">View Team</button>
+                    </div>
+                </div>
+                
+                <div class="team-item">
+                    <div class="team-logo-large">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <div class="team-details">
+                        <h3>Strikers United</h3>
+                        <p>Record: 5-3-2</p>
+                        <p>Points: 18</p>
+                        <button class="view-btn">View Team</button>
+                    </div>
+                </div>
+                
+                <div class="team-item">
+                    <div class="team-logo-large">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <div class="team-details">
+                        <h3>Midfield Magicians</h3>
+                        <p>Record: 4-4-2</p>
+                        <p>Points: 16</p>
+                        <button class="view-btn">View Team</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>About Football Tournament Manager</h3>
+                <p>Our platform helps you organize, schedule, and manage football tournaments with ease. Keep track of teams, matches, and standings all in one place.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/p/19UCbVnkjK/" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://youtube.com/@infinityquestlabs?si=DUTSP1enY4uz2Ris" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@infinityquestlabs5?_t=ZM-8ytaZW36Ps0&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/infinityQuestLabs/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="#">Home</a>
+                <a href="#">Tournaments</a>
+                <a href="#">Schedule</a>
+                <a href="#">Teams</a>
+                <a href="#">Support</a>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p>
+                    <a href="mailto:infinityquestlabs@gmail.com">
+                    <i class="fas fa-envelope"></i> infinityquestlabs@gmail.com
+                    </a>
+                </p>
+                <p>
+                    <a href="tel:+254720060752">
+                    <i class="fas fa-phone"></i> +254 720060752
+                    </a>
+                </p>
+                <p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Nairobi+Juja" target="_blank">
+                    <i class="fas fa-map-marker-alt"></i> Nairobi Juja
+                    </a>
+                </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 Football Tournament Manager. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
