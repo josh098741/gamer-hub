@@ -36,7 +36,7 @@ const submit = document.getElementById('submit');
         .then((userCredential) => {
         const user = userCredential.user;
         //alert("Login successful! Welcome " + user.email);
-        window.location.href = "/user-panel.html";
+        window.location.href = "/public/user-panel.html";
         })
         .catch((error) => {
         alert(error.message);
@@ -52,7 +52,7 @@ googleLoginBtn.addEventListener("click",(event) => {
     .then((result) => {
         const user = result.user;
         alert("Google Login Successful! Welcome", + user.displayName);
-        window.location.href = "/user-panel.html";
+        window.location.href = "/public/user-panel.html";
     })
     .catch((error) => {
         console.error(error);

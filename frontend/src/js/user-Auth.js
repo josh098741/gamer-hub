@@ -36,7 +36,7 @@ createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
     const user = userCredential.user;
     alert("Signup successful! Welcome " + user.email);
-    window.location.href = "/user-panel.html";
+    window.location.href = "/public/user-panel.html";
     })
     .catch((error) => {
     alert(error.message);
@@ -52,7 +52,7 @@ googleLoginBtn.addEventListener("click",(event) => {
     .then((result) => {
         const user = result.user;
         alert("Google Login Succesful! Welcome " + user.displayName);
-        window.location.href = "/user-panel.html";
+        window.location.href = "/public/user-panel.html";
     })
     .catch((error) => {
         console.log(error);
