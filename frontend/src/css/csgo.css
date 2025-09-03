@@ -18,7 +18,6 @@ body {
 header {
     height: 180px;
     width: 100%;
-    background: url(/frontend/src/images/csgo.png) center/cover no-repeat;
     display: flex;
     align-items: center;
     padding: 0 20px;

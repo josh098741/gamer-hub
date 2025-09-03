@@ -58,40 +58,6 @@ header {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
-/* Navigation */
-.nav-container {
-    background: linear-gradient(to right, #0a0a2a, #1a1a4a);
-    padding: 12px 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
-
-.nav-links a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 8px 16px;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-}
-
-.nav-links a:hover, .nav-links a.active {
-    background: #b8860b;
-    color: #fff;
-}
-
 /* Main Content */
 main {
     max-width: 1200px;
