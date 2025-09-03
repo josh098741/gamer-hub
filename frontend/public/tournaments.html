@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournament Listings</title>
+    <link rel="icon" href="../src/images/iql2.png">
+    <link rel="stylesheet" href="../src/css/tournament.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Upcoming Tournaments</h1>
+            <p>Find and register for upcoming gaming tournaments. Check back regularly for updates!</p>
+        </header>
+
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search tournaments...">
+            </div>
+            <div class="filters">
+                <button class="filter" data-filter="all">All</button>
+                <button class="filter" data-filter="upcoming">Upcoming</button>
+                <button class="filter" data-filter="ongoing">Ongoing</button>
+                <button class="filter" data-filter="fps">FPS</button>
+                <button class="filter" data-filter="moba">MOBA</button>
+                <button class="filter" data-filter="sports">Sports</button>
+                <button class="filter" data-filter="strategy">Strategy</button>
+                <button class="filter" data-filter="strategy">Battle Royale</button>
+            </div>
+        </div>
+
+        <div class="tournament-grid" id="tournamentContainer">
+            <!-- Tournament cards will be generated here -->
+        </div>
+    </div>
+
+    <script src="../src/js/tournaments.js"></script>
+</body>
+</html>
