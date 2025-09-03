@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity Quest Labs - Tournament Support</title>
+    <link rel="stylesheet" href="../src/css/support.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../src/images/iql2.png">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-image">
+                <img src="../src/images/iql2.png" alt="Infinity Quest Labs Logo">
+            </div>
+            <div class="header-text">
+                <h2>Infinity Quest Labs</h2>
+                <p>Tournament Support & Scheduling</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="support-header">
+            <h1>Tournament Support Center</h1>
+            <p>Need help scheduling or managing your tournament? We're here to assist you!</p>
+        </div>
+
+        <div class="support-container">
+            <div class="support-card">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <div class="faq-question">How do I schedule a tournament?</div>
+                    <div class="faq-answer">Fill out the tournament scheduling form on this page with all required details, and our team will contact you within 24 hours to confirm your tournament.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What information do I need to provide?</div>
+                    <div class="faq-answer">You'll need to provide tournament name, game title, expected date and time, duration, prize pool, format, and your contact information.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How far in advance should I schedule?</div>
+                    <div class="faq-answer">We recommend scheduling at least 7-10 days in advance to allow for proper promotion and participant registration.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What games are supported?</div>
+                    <div class="faq-answer">We support all major esports titles including Valorant, COD Mobile, FIFA, Clash Royale, Fortnite, PUBG Mobile, and many others.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Is there a fee for tournament scheduling?</div>
+                    <div class="faq-answer">Basic tournament scheduling is free. Premium features like enhanced promotion, dedicated support, and custom branding may have associated fees.</div>
+                </div>
+            </div>
+
+            <div class="support-card">
+                <h2>Contact Support</h2>
+                <div class="contact-methods">
+                    <a href="mailto:infinityquestlabs@gmail.com" class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Email Support</h3>
+                            <p>infinityquestlabs@gmail.com</p>
+                        </div>
+                    </a>
+                    <a href="https://wa.me/254720060752" class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>WhatsApp</h3>
+                            <p>+254 720060752</p>
+                        </div>
+                    </a>
+                    <a href="tel:+254720060752" class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Call Us</h3>
+                            <p>+254 720060752</p>
+                        </div>
+                    </a>
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Response Time</h3>
+                            <p>Typically within 24 hours</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="schedule-form">
+            <h2>Schedule a Tournament</h2>
+            <div class="success-message" id="successMessage">
+                <i class="fas fa-check-circle"></i> Thank you! Your tournament request has been submitted. We'll contact you within 24 hours.
+            </div>
+            
+            <form id="tournamentForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="tournamentName">Tournament Name *</label>
+                        <input type="text" id="tournamentName" name="tournamentName" required placeholder="e.g., Valorant Spring Cup">
+                    </div>
+                    <div class="form-group">
+                        <label for="gameTitle">Game Title *</label>
+                        <select id="gameTitle" name="gameTitle" required>
+                            <option value="">Select a game</option>
+                            <option value="valorant">Valorant</option>
+                            <option value="cod">Call of Duty Mobile</option>
+                            <option value="fifa">FIFA 25</option>
+                            <option value="clash-royale">Clash Royale</option>
+                            <option value="8ball">8 Ball Pool</option>
+                            <option value="chess">Chess</option>
+                            <option value="fortnite">Fortnite</option>
+                            <option value="pubg">PUBG Mobile</option>
+                            <option value="brawl-stars">Brawl Stars</option>
+                            <option value="lol">League of Legends</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="tournamentDate">Tournament Date *</label>
+                        <input type="date" id="tournamentDate" name="tournamentDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tournamentTime">Start Time *</label>
+                        <input type="time" id="tournamentTime" name="tournamentTime" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="duration">Expected Duration *</label>
+                        <select id="duration" name="duration" required>
+                            <option value="">Select duration</option>
+                            <option value="1-2">1-2 hours</option>
+                            <option value="2-4">2-4 hours</option>
+                            <option value="4-6">4-6 hours</option>
+                            <option value="6-8">6-8 hours</option>
+                            <option value="full-day">Full day event</option>
+                            <option value="multi-day">Multi-day event</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="prizePool">Prize Pool (USD)</label>
+                        <input type="number" id="prizePool" name="prizePool" placeholder="e.g., 1000">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="format">Tournament Format *</label>
+                        <select id="format" name="format" required>
+                            <option value="">Select format</option>
+                            <option value="single-elimination">Single Elimination</option>
+                            <option value="double-elimination">Double Elimination</option>
+                            <option value="round-robin">Round Robin</option>
+                            <option value="swiss">Swiss System</option>
+                            <option value="free-for-all">Free for All</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="participants">Expected Participants *</label>
+                        <select id="participants" name="participants" required>
+                            <option value="">Select number</option>
+                            <option value="2-8">2-8 players/teams</option>
+                            <option value="8-16">8-16 players/teams</option>
+                            <option value="16-32">16-32 players/teams</option>
+                            <option value="32-64">32-64 players/teams</option>
+                            <option value="64+">64+ players/teams</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Tournament Description *</label>
+                    <textarea id="description" name="description" required placeholder="Please describe your tournament, including any special rules or requirements..."></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="organizerName">Your Name *</label>
+                        <input type="text" id="organizerName" name="organizerName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="organizerEmail">Your Email *</label>
+                        <input type="email" id="organizerEmail" name="organizerEmail" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="organizerPhone">Phone Number</label>
+                        <input type="tel" id="organizerPhone" name="organizerPhone" placeholder="Include country code">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMethod">Preferred Contact Method *</label>
+                        <select id="contactMethod" name="contactMethod" required>
+                            <option value="">Select method</option>
+                            <option value="email">Email</option>
+                            <option value="whatsapp">WhatsApp</option>
+                            <option value="phone">Phone Call</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Request</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>Infinity Quest Labs is a premier gaming platform for competitive tournaments. Join our community of professional and amateur gamers.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/p/19UCbVnkjK/" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://youtube.com/@infinityquestlabs?si=DUTSP1enY4uz2Ris" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@infinityquestlabs5?_t=ZM-8ytaZW36Ps0&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/infinityQuestLabs/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="tournaments.html">Tournaments</a>
+                <a href="leaderboard.html">Leaderboards</a>
+                <a href="support.html">Tournament Support</a>
+                <a href="#">My Profile</a>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p>
+                    <a href="mailto:infinityquestlabs@gmail.com">
+                        <i class="fas fa-envelope"></i> infinityquestlabs@gmail.com
+                    </a>
+                </p>
+                <p>
+                    <a href="tel:+254720060752">
+                        <i class="fas fa-phone"></i> +254 720060752
+                    </a>
+                </p>
+                <p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Nairobi+Juja" target="_blank">
+                        <i class="fas fa-map-marker-alt"></i> Nairobi Juja
+                    </a>
+                </p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 Infinity Quest Labs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('tournamentForm');
+            const successMessage = document.getElementById('successMessage');
+
+            // Set minimum date to today
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const dd = String(today.getDate()).padStart(2, '0');
+            document.getElementById('tournamentDate').min = `${yyyy}-${mm}-${dd}`;
+
+            // WhatsApp number in international format (no +, no spaces)
+            const WHATSAPP_NUMBER = "254720060752";
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Collect form data
+                const data = {
+                    tournamentName: form.tournamentName.value,
+                    gameTitle: form.gameTitle.value,
+                    tournamentDate: form.tournamentDate.value,
+                    tournamentTime: form.tournamentTime.value,
+                    duration: form.duration.value,
+                    prizePool: form.prizePool.value || "N/A",
+                    format: form.format.value,
+                    participants: form.participants.value,
+                    description: form.description.value,
+                    organizerName: form.organizerName.value,
+                    organizerEmail: form.organizerEmail.value,
+                    organizerPhone: form.organizerPhone.value || "N/A",
+                    contactMethod: form.contactMethod.value
+                };
+
+                // Format message
+                const message = `
+        📢 *New Tournament Request*
+        ━━━━━━━━━━━━━━━
+        🏆 Name: ${data.tournamentName}
+        🎮 Game: ${data.gameTitle}
+        📅 Date: ${data.tournamentDate}
+        ⏰ Time: ${data.tournamentTime}
+        ⌛ Duration: ${data.duration}
+        💰 Prize Pool: ${data.prizePool}
+        📊 Format: ${data.format}
+        👥 Participants: ${data.participants}
+
+        📝 Description:
+        ${data.description}
+
+        👤 Organizer: ${data.organizerName}
+        📧 Email: ${data.organizerEmail}
+        📱 Phone: ${data.organizerPhone}
+        📡 Preferred Contact: ${data.contactMethod}
+                `;
+
+                // Open WhatsApp with pre-filled message
+                const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+                window.open(url, "_blank");
+
+                // Show success message
+                successMessage.style.display = 'block';
+
+                // Reset form
+                form.reset();
+
+                // Scroll to success message
+                successMessage.scrollIntoView({ behavior: 'smooth' });
+
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000);
+            });
+        });
+    </script>
+</body>
+</html>

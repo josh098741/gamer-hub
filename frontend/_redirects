@@ -41,3 +41,6 @@
 /tournament       /tournaments.html
 /user-panel       /user-panel.html
 /volleyball       /volleyball.html
+/home             /index.html
+/login            /login.html
+/signup           /signup.html
