@@ -74,7 +74,7 @@ body {
 .input-group i {
     position: absolute;
     left: 15px;
-    top: 40px;
+    top: 47px;
     color: #4b6cb7;
 }
 
@@ -159,12 +159,15 @@ body {
     border-radius: 10px;
     display: flex;
     align-items: center;
-    gap: 10px;
     justify-content: center;
     color: white;
     font-size: 18px;
     cursor: pointer;
     transition: all 0.3s ease;
+}
+
+.google {
+    background: #dd4b39;
 }
 
 .google button{
@@ -178,10 +181,6 @@ body {
     gap: 10px;
     align-items: center;
     justify-content: center;
-}
-
-.google {
-    background: #dd4b39;
 }
 
 .social-btn:hover {
@@ -228,4 +227,16 @@ body {
         flex-direction: column;
         gap: 10px;
     }
+}
+
+.social-login  .google button,
+.social-login .facebook button,
+.social-login .twitter button{
+    width: 100%;
+    height: 100%;
+    background: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 19px;
+    border: none;
 }
