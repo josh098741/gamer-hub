@@ -21,6 +21,13 @@ app.use(express.static('../public'))
         GET /api/users/:id -> Get a single user profile
         PUT /api/users/:id -> Update profile info (eg phone number avatar)
         DELETE /api/users/:id -> Delete a user (admin only)
+
+    <==Team Routes==>
+        POST /api/teams -> Create a team (captain only)
+        GET /api/teams -> Get all teams
+        GET /api/teams/:id -> Get team details (captain, members, stats)
+        PUT /api/teams/:id -> Update a team (add/remove members)
+        DELETE /api/teams/:id -> Delete a team (admin or captain)
         
     <==Tournament Routes===>
         POST /api/tournaments -> Create a new tournament(admin)
