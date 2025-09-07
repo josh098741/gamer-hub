@@ -1,13 +1,15 @@
 require('dotenv').config();
 const express = require('express');
 const  connectDB = require('./db/connect');
+
+
+
+
 const app = express();
 
 //Middleware
 app.use(express.json())
 app.use(express.static('../public'))
-
-
 
 
 /*
