@@ -1,7 +1,14 @@
-require('dotenv').config();
 const express = require('express');
 const  connectDB = require('./db/connect');
 
+require('dotenv').config();
+
+const authRoutes = require('./routes/authRoutes');
+const userRoutes = require('./routes/userRoutes');
+const tournamentRoutes = require('./routes/tournamentRoutes');
+const matchRoutes = require('./routes/matchRoutes');
+const paymentRoutes = require('./routes/paymentRoutes');
+const notificationRoutes = require('./routes/notificationRoutes');
 
 
 
@@ -9,8 +16,14 @@ const app = express();
 
 //Middleware
 app.use(express.json())
-app.use(express.static('../public'))
 
+//Routes
+app.use("/api/auth",authRoutes);
+app.use("/api/users",userRoutes);
+app.use("/api/tournaments",tournamentRoutes);
+app.use("/api/matches",matchRoutes);
+app.use("/api/payments",paymentRoutes);
+app.use("/api/notifications",notificationRoutes);
 
 /*
     <==Auth Routes==>
