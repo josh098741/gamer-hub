@@ -38,7 +38,12 @@ app.use(express.static('../public'))
 
     <==Team/Player==>
         POST  /api/tournaments/:id/register/ -> Register a team or player for a tournament
-        GET   /api/tournament/:id/participants -> get all registered players/teams
+        GET   /api/tournaments/:id/participants -> get all registered players/teams
+
+    <==Tournament Registration==>
+        POST /api/tournaments/:id/register/player/:playerId -> Register a player in a solo tournament
+        POST /api/tournaments/:id/register/team/:teamID -> Register a team in a team tournament
+        GET /api/tournaments/:id/participants/ -> Get all perticipants (teams or players)
 
     <==Match Routes==>
         POST /api/matches -> Create a match (admin)
