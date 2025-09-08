@@ -1,8 +1,11 @@
+require('dotenv').config();
 const express = require('express');
 const  connectDB = require('./db/connect');
+const morgan = require("morgan");
 
-require('dotenv').config();
+const app = express();
 
+//Routes
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
 const tournamentRoutes = require('./routes/tournamentRoutes');
@@ -10,20 +13,27 @@ const matchRoutes = require('./routes/matchRoutes');
 const paymentRoutes = require('./routes/paymentRoutes');
 const notificationRoutes = require('./routes/notificationRoutes');
 
+const securityMiddleware = require("./middleware/security");
+const errorHandler = require("./middleware/errorHandler");
+const notFound = require("./middleware/notFound");
 
+// === Global Middleware ===
+app.use(express.json());
+securityMiddleware(app);
 
-const app = express();
-
-//Middleware
-app.use(express.json())
-
-//Routes
+// ===API Routes ====
 app.use("/api/auth",authRoutes);
 app.use("/api/users",userRoutes);
 app.use("/api/tournaments",tournamentRoutes);
 app.use("/api/matches",matchRoutes);
 app.use("/api/payments",paymentRoutes);
 app.use("/api/notifications",notificationRoutes);
+
+
+//====Error handling ===
+app.use(notFound);
+app.use(errorHandler);
+
 
 /*
     <==Auth Routes==>
