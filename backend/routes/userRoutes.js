@@ -9,15 +9,15 @@ const {
 } = require("../controllers/userController");
 
 const auth = require("../middleware/authMiddleware");
-const role = require("../middleware/roleMiddleare");
+const role = require("../middleware/roleMiddleware"); // Fixed typo from "roleMiddleare"
 const validateProfileUpdate = require("../middleware/validation/validateProfileUpdate");
 
-//Admin only
-router.get("/api/users",auth,role(["admin"]),getUsers)
-router.delete("/api/users/:id",auth,role(["admin"]),deleteUser)
+// Admin only routes
+router.get("/", auth, role(["admin"]), getUsers); // Fixed route path
+router.delete("/:id", auth, role(["admin"]), deleteUser); // Fixed route path
 
-//Anyone
-router.get("/admin/user/:id",auth, getUserById);
-router.put("/api/user/:id",auth,validateProfileUpdate, updateUser)
+// User routes (accessible to authenticated users)
+router.get("/:id", auth, getUserById); // Fixed route path
+router.put("/:id", auth, validateProfileUpdate, updateUser); // Fixed route path
 
-module.exports = router
+module.exports = router;

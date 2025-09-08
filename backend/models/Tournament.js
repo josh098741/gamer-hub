@@ -7,14 +7,14 @@ const TournamentSchema = new mongoose.Schema({
     },
     type: {
         type: String,
-        enum: ["solo","team"],
+        enum: ["solo", "team"],
         required: true,
     },
     startDate: {
         type: Date,
         required: true
     },
-    endDate : {
+    endDate: {
         type: Date
     },
     createdBy: {
@@ -25,7 +25,14 @@ const TournamentSchema = new mongoose.Schema({
     participants: [{
         type: mongoose.Schema.Types.ObjectId,
         refPath: "participantsModel"
-    }]
-},{timestamps: true})
+    }],
+    participantsModel: { // Added to support refPath
+        type: String,
+        enum: ["User", "Team"],
+        default: function() {
+            return this.type === "solo" ? "User" : "Team";
+        }
+    }
+}, { timestamps: true });
 
-module.exports = mongoose.model("Tournament",TournamentSchema)
+module.exports = mongoose.model("Tournament", TournamentSchema);

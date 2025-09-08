@@ -10,10 +10,9 @@ const {
 const validateRegister = require('../middleware/validation/validateRegister');
 const validateLogin = require('../middleware/validation/validateLogin');
 
-router.post('/api/auth/register',validateRegister,register);
+// Fixed route paths - removed /api prefix since it's handled in server.js
+router.post('/register', validateRegister, register);
+router.post('/login', validateLogin, login);
+router.post('/logout', logout);
 
-router.post('/api/auth/login',validateLogin,login);
-
-router.post('/api/auth/logout',logout)
-
-module.exports = router
+module.exports = router;

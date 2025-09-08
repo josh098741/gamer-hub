@@ -8,7 +8,7 @@ const MatchSchema = new mongoose.Schema({
     },
     type: {
         type: String,
-        enum: ["User","Team"],
+        enum: ["solo", "team"], // Fixed: changed from "User","Team" to match tournament types
         required: true,
     },
     participants: [{
@@ -17,7 +17,8 @@ const MatchSchema = new mongoose.Schema({
     }],
     participantsModel: {
         type: String,
-        enum: ["User","Team"]
+        enum: ["User", "Team"],
+        required: true
     },
     scores: {
         type: Map,
@@ -25,13 +26,12 @@ const MatchSchema = new mongoose.Schema({
     },
     status: {
         type: String,
-        enum: ["pending","ongoing","completed"],
-        scheduledAt: {
-            type: Date
-        }
+        enum: ["pending", "ongoing", "completed"],
+        default: "pending"
+    },
+    scheduledAt: {
+        type: Date
     }
-},{timestamps:true});
+}, { timestamps: true });
 
-
-
-module.exports = mongoose.model("Match",MatchSchema)
+module.exports = mongoose.model("Match", MatchSchema);

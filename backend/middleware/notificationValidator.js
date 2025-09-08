@@ -1,16 +1,16 @@
-const {body, validationResult} = require("express-validator");
+const { body, validationResult } = require("express-validator");
 
 const notificationValidator = [
     body("message").notEmpty().withMessage("Message is required"),
     body("recipient").notEmpty().withMessage("Recipient is required"),
 
-    (req,res, next) => {
+    (req, res, next) => {
         const errors = validationResult(req);
-        if(!errors.isEmpty()){
-            return res.status(400).json({errors: errors.array()});
-            next();
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ errors: errors.array() });
         }
+        next(); // Fixed: moved next() outside the if block
     },
 ];
 
-module.exports = notificationValidator
+module.exports = notificationValidator;

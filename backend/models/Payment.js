@@ -8,18 +8,23 @@ const paymentSchema = new mongoose.Schema({
     },
     amount: {
         type: Number,
-        enum: ["mpesa","stripe","paypal"],
+        required: true
+    },
+    method: { // Fixed: moved method from amount field
+        type: String,
+        enum: ["mpesa", "stripe", "paypal"],
         required: true
     },
     status: {
         type: String,
-        enum: ["pending","success","failed"],
+        enum: ["pending", "success", "failed"],
+        default: "pending"
     },
     transactionId: {
         type: String,
         unique: true,
+        sparse: true // Allows multiple null values
     }
-},{timestamps: true});
+}, { timestamps: true });
 
-
-module.exports = mongoose.model("Payment",paymentSchema);
+module.exports = mongoose.model("Payment", paymentSchema);

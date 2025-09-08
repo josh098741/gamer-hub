@@ -8,32 +8,32 @@ const {
     updateTournament,
     deleteTournament,
     registerParticipant,
-    getParticipants
+    getParticipants // Fixed function name
 } = require("../controllers/tournamentController");
 
 const authMiddleware = require("../middleware/authMiddleware");
 const roleMiddleware = require("../middleware/roleMiddleware");
-const validateTournament = require("../middleware/validation/validateTournament")
+const validateTournament = require("../middleware/validation/validateTournament");
 
-//CREATE tournament (admins only)
-router.post("/api/tournaments",authMiddleware,roleMiddleware(["admin"]),validateTournament,createTournament);
+// CREATE tournament (admins only)
+router.post("/", authMiddleware, roleMiddleware(["admin"]), validateTournament, createTournament);
 
-//GET tournaments (all)
-router.get("/api/tournaments",getTournaments);
+// GET tournaments (all)
+router.get("/", getTournaments);
 
-//GET one tournament
-router.get("/api/tournaments/:id",getTournamentsById);
+// GET one tournament
+router.get("/:id", getTournamentsById);
 
-//UPDATE tournament (Admin only)
-router.put("/api/tournaments/:id",authMiddleware,roleMiddleware(["admin"]),updateTournament)
+// UPDATE tournament (Admin only)
+router.put("/:id", authMiddleware, roleMiddleware(["admin"]), updateTournament);
 
-//DELETE tournament (Admin only)
-router.delete("/api/tournaments/:id",authMiddleware,roleMiddleware(["admin"]),deleteTournament);
+// DELETE tournament (Admin only)
+router.delete("/:id", authMiddleware, roleMiddleware(["admin"]), deleteTournament);
 
-//REGISTER  participant (team or individual)
-router.post("/api/tournaments/:id/register",authMiddleware,registerParticipant);
+// REGISTER participant (team or individual)
+router.post("/:id/register", authMiddleware, registerParticipant);
 
-//GET all participants
-router.get("/api/tournaments/:id/participants",getParticipants)
+// GET all participants
+router.get("/:id/participants", getParticipants);
 
 module.exports = router;

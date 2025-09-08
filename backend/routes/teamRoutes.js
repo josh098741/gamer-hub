@@ -9,13 +9,14 @@ const {
   registerTeamToTournament,
 } = require("../controllers/teamController");
 
-// Middleware
-const { protect, adminOnly } = require("../middleware/authMiddleware");
+// Fixed middleware imports to match actual middleware names
+const auth = require("../middleware/authMiddleware");
+const role = require("../middleware/roleMiddleware");
 
 // @route   POST /api/teams
 // @desc    Create a new team
 // @access  Private (logged in)
-router.post("/", protect, createTeam);
+router.post("/", auth, createTeam);
 
 // @route   GET /api/teams
 // @desc    Get all teams
@@ -30,19 +31,19 @@ router.get("/:id", getTeamById);
 // @route   PUT /api/teams/:id
 // @desc    Update team
 // @access  Private (team creator or admin)
-router.put("/:id", protect, updateTeam);
+router.put("/:id", auth, updateTeam);
 
 // @route   DELETE /api/teams/:id
 // @desc    Delete team
 // @access  Private (team creator or admin)
-router.delete("/:id", protect, deleteTeam);
+router.delete("/:id", auth, deleteTeam);
 
-// @route   POST /api/tournaments/:tournamentId/register/team
+// @route   POST /api/teams/tournament/:tournamentId/register
 // @desc    Register team in a tournament
 // @access  Private
 router.post(
   "/tournament/:tournamentId/register",
-  protect,
+  auth,
   registerTeamToTournament
 );
 

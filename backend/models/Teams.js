@@ -6,7 +6,12 @@ const TeamSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    captain: {
+    captain: { // This field exists in schema but not used in controller
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+        // Made optional to match controller logic
+    },
+    createdBy: { // Added to match controller usage
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
         required: true,
@@ -18,7 +23,6 @@ const TeamSchema = new mongoose.Schema({
     logo: {
         type: String
     }
-},{timestamps: true})
+}, { timestamps: true });
 
-
-module.exports = mongoose.model("Team",TeamSchema)
+module.exports = mongoose.model("Team", TeamSchema);

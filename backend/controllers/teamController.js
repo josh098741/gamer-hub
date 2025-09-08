@@ -19,10 +19,12 @@ const createTeam = async (req, res, next) => {
 
     const team = await Team.create({
       name,
-      members, // array of user IDs
+      members: members || [], // array of user IDs
       createdBy: req.user.id, // who created it
+      captain: req.user.id, // Set creator as captain by default
     });
 
+    await team.populate("members", "username email");
     res.status(201).json(team);
   } catch (err) {
     next(err);
@@ -34,7 +36,10 @@ const createTeam = async (req, res, next) => {
 // @access Public
 const getAllTeams = async (req, res, next) => {
   try {
-    const teams = await Team.find().populate("members", "username email");
+    const teams = await Team.find()
+      .populate("members", "username email")
+      .populate("createdBy", "username email")
+      .populate("captain", "username email");
     res.status(200).json(teams);
   } catch (err) {
     next(err);
@@ -46,10 +51,11 @@ const getAllTeams = async (req, res, next) => {
 // @access Public
 const getTeamById = async (req, res, next) => {
   try {
-    const team = await Team.findById(req.params.id).populate(
-      "members",
-      "username email"
-    );
+    const team = await Team.findById(req.params.id)
+      .populate("members", "username email")
+      .populate("createdBy", "username email")
+      .populate("captain", "username email");
+    
     if (!team) {
       return res.status(404).json({ message: "Team not found" });
     }
@@ -75,10 +81,13 @@ const updateTeam = async (req, res, next) => {
       return res.status(403).json({ message: "Not authorized" });
     }
 
-    team.name = req.body.name || team.name;
-    team.members = req.body.members || team.members;
+    // Update fields
+    if (req.body.name) team.name = req.body.name;
+    if (req.body.members) team.members = req.body.members;
+    if (req.body.captain) team.captain = req.body.captain;
 
     const updatedTeam = await team.save();
+    await updatedTeam.populate("members", "username email");
     res.status(200).json(updatedTeam);
   } catch (err) {
     next(err);
@@ -101,7 +110,8 @@ const deleteTeam = async (req, res, next) => {
       return res.status(403).json({ message: "Not authorized" });
     }
 
-    await team.remove();
+    // Use deleteOne() instead of deprecated remove()
+    await Team.findByIdAndDelete(req.params.id);
     res.status(200).json({ message: "Team removed successfully" });
   } catch (err) {
     next(err);
@@ -109,7 +119,7 @@ const deleteTeam = async (req, res, next) => {
 };
 
 // @desc Register a team into a tournament
-// @route POST /api/tournaments/:tournamentId/register/team
+// @route POST /api/teams/tournament/:tournamentId/register
 // @access Private
 const registerTeamToTournament = async (req, res, next) => {
   try {
@@ -121,18 +131,25 @@ const registerTeamToTournament = async (req, res, next) => {
       return res.status(404).json({ message: "Tournament not found" });
     }
 
+    if (tournament.type !== "team") {
+      return res.status(400).json({ message: "This tournament is not for teams" });
+    }
+
     const team = await Team.findById(teamId);
     if (!team) {
       return res.status(404).json({ message: "Team not found" });
     }
 
-    if (tournament.teams.includes(teamId)) {
-      return res
-        .status(400)
-        .json({ message: "Team already registered in this tournament" });
+    // Check if user is team captain or admin
+    if (team.createdBy.toString() !== req.user.id && req.user.role !== "admin") {
+      return res.status(403).json({ message: "Only team creator can register the team" });
     }
 
-    tournament.teams.push(teamId);
+    if (tournament.participants.includes(teamId)) {
+      return res.status(400).json({ message: "Team already registered in this tournament" });
+    }
+
+    tournament.participants.push(teamId);
     await tournament.save();
 
     res.status(200).json({ message: "Team registered successfully", tournament });
