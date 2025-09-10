@@ -14,7 +14,7 @@ const tournaments = [
     {
         id: 2,
         name: "Call of Duty Mobile Vanguard series",
-        game: "Call of Duty Mobile",
+        game: "COD Mobile",
         type: "fps",
         date: "2025-11-20",
         time: "16:00 EST",
