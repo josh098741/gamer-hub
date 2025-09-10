@@ -16,6 +16,7 @@ const tournamentSchema = new mongoose.Schema({
     location: {
         type: String,
         enum: ['Online','Physical'],
+        default: 'Online',
         required: true
     },
     startDate: {
@@ -31,7 +32,8 @@ const tournamentSchema = new mongoose.Schema({
         default: 'Pending'
     },
     createAt: {
-        type: Date.now
+        type: Date,
+        default: Date.now
     }
 },{timestamps: true});
 

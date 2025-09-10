@@ -10,8 +10,10 @@ app.use(express.json())
 const notFound = require('./middleware/notFound');
 const errorHandler = require('./middleware/errorHandler');
 const connectDB = require('./db/connect')
+const tournamentRoutes = require('./routes/tournamentRoutes')
 
 
+app.use('/api/tournaments',tournamentRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
