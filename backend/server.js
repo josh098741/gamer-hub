@@ -16,6 +16,9 @@ const connectDB = require('./db/connect')
 app.use(notFound);
 app.use(errorHandler);
 
+
+
+
 const PORT = process.env.PORT || 5000
 const start = async () => {
     try{
