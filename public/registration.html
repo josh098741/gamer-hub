@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registration Form</title>
+        <link rel="icon" href="./images/iql2.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="../src/css/registration.css">
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Join Our Gaming Community</h1>
+                <p>Register to get started with our Services</p>
+            </header>
+            
+            <main class="content">
+                <h2>Register Here</h2>
+                <form id="regForm">
+                    <div class="form-group">
+                        <label for="name"><i class="fas fa-user"></i> Your Name</label>
+                        <input type="text" id="name" placeholder="Enter your full name" required>
+                        <div class="error-message" id="nameError">Please enter your name</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Your Email</label>
+                        <input type="email" id="email" placeholder="Enter your email address" required>
+                        <div class="error-message" id="emailError">Please enter a valid email address</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message"><i class="fas fa-comment"></i> Game you are registering for</label>
+                        <textarea id="message" placeholder="Tell us about your needs or interests" required></textarea>
+                        <div class="error-message" id="messageError">Please enter a message</div>
+                    </div>
+                    
+                    <button type="submit" id="submitBtn">
+                        <span>Submit</span>
+                    </button>
+                    
+                    <div class="success-message" id="successMessage">
+                        <i class="fas fa-check-circle"></i> Thank you for registering! We'll get back to you soon.
+                    </div>
+                </form>
+                
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/p/19UCbVnkjK/" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://youtube.com/@infinityquestlabs?si=DUTSP1enY4uz2Ris" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@infinityquestlabs5?_t=ZM-8ytaZW36Ps0&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/infinityQuestLabs/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </main>
+            
+            <footer>
+                <p>&copy; 2025 Infinity Quest Labs. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </footer>
+        </div>
+
+        <script>
+            document.getElementById('regForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const message = document.getElementById('message').value.trim();
+                
+                // Validate form
+                let isValid = true;
+                
+                // Name validation
+                if (name === '') {
+                    document.getElementById('nameError').style.display = 'block';
+                    document.getElementById('name').classList.add('input-error');
+                    isValid = false;
+                } else {
+                    document.getElementById('nameError').style.display = 'none';
+                    document.getElementById('name').classList.remove('input-error');
+                }
+                
+                // Email validation
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email)) {
+                    document.getElementById('emailError').style.display = 'block';
+                    document.getElementById('email').classList.add('input-error');
+                    isValid = false;
+                } else {
+                    document.getElementById('emailError').style.display = 'none';
+                    document.getElementById('email').classList.remove('input-error');
+                }
+                
+                // Message validation
+                if (message === '') {
+                    document.getElementById('messageError').style.display = 'block';
+                    document.getElementById('message').classList.add('input-error');
+                    isValid = false;
+                } else {
+                    document.getElementById('messageError').style.display = 'none';
+                    document.getElementById('message').classList.remove('input-error');
+                }
+                
+                if (!isValid) return;
+                
+                // Show loading state
+                const submitBtn = document.getElementById('submitBtn');
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span class="spinner"></span> Processing...';
+                
+                try {
+                    // Simulate API call with timeout
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    
+                    // In a real application, you would use the fetch API as in the original code
+                    // For demonstration, we'll simulate a successful response
+                    const data = { msg: "Registration successful! We'll contact you soon." };
+                    
+                    // Show success message
+                    document.getElementById('successMessage').style.display = 'block';
+                    
+                    // Reset form
+                    document.getElementById('regForm').reset();
+                    
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        document.getElementById('successMessage').style.display = 'none';
+                    }, 5000);
+                    
+                } catch (error) {
+                    alert('An error occurred: ' + error.message);
+                } finally {
+                    // Reset button state
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<span>Submit</span>';
+                }
+            });
+            
+            // Add real-time validation
+            document.getElementById('name').addEventListener('input', function() {
+                if (this.value.trim() !== '') {
+                    this.classList.remove('input-error');
+                    document.getElementById('nameError').style.display = 'none';
+                }
+            });
+            
+            document.getElementById('email').addEventListener('input', function() {
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (emailPattern.test(this.value.trim())) {
+                    this.classList.remove('input-error');
+                    document.getElementById('emailError').style.display = 'none';
+                }
+            });
+            
+            document.getElementById('message').addEventListener('input', function() {
+                if (this.value.trim() !== '') {
+                    this.classList.remove('input-error');
+                    document.getElementById('messageError').style.display = 'none';
+                }
+            });
+        </script>
+    </body>
+</html>

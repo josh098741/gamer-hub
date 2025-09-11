@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 body {
@@ -131,7 +132,7 @@ main {
 }
 
 .join-btn {
-    background: #b8860b;
+    background: #fffb05;
     color: white;
     border: none;
     padding: 8px 16px;

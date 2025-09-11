@@ -1,0 +1,222 @@
+[
+  {
+    "name": "Valorant Champions Qualifications",
+    "game": "Valorant",
+    "type": "fps",
+    "location": "Online",
+    "startDate": "2025-11-15T14:00:00.000Z",
+    "endDate": "2025-11-15T16:00:00.000Z",
+    "prize": 10000,
+    "status": "Pending",
+    "registrationLink": "https://wa.me/254720060752?text=I'm+registering+for+Valorant+Champions+Qualifications"
+  },
+  {
+    "name": "Call of Duty Mobile Vanguard Series",
+    "game": "COD Mobile",
+    "type": "fps",
+    "location": "Online",
+    "startDate": "2025-11-20T16:00:00.000Z",
+    "endDate": "2025-11-20T18:00:00.000Z",
+    "prize": 7500,
+    "status": "Pending",
+    "registrationLink": "https://wa.me/254720060752?text=I'm+registering+for+Call+of+Duty+Mobile+Showdown"
+  },
+  {
+    "name": "FIFA 25 Ultimate Cup",
+    "game": "FIFA 25",
+    "type": "sports",
+    "location": "Nairobi LAN Center",
+    "startDate": "2025-11-22T18:00:00.000Z",
+    "endDate": "2025-11-22T20:00:00.000Z",
+    "prize": 5000,
+    "status": "Pending",
+    "registrationLink": "https://wa.me/254720060752?text=I'm+registering+for+FIFA+25+Ultimate+Cup"
+  },
+  {
+    "name": "CS2 Global Qualifier",
+    "game": "Counter-Strike 2",
+    "type": "fps",
+    "location": "Berlin Arena",
+    "startDate": "2025-12-01T15:00:00.000Z",
+    "endDate": "2025-12-01T19:00:00.000Z",
+    "prize": 20000,
+    "status": "Pending",
+    "registrationLink": "https://wa.me/254720060752?text=I'm+registering+for+CS2+Global+Qualifier"
+  },
+  {
+    "name": "Fortnite Battle Royale Clash",
+    "game": "Fortnite",
+    "type": "battle-royale",
+    "location": "Online",
+    "startDate": "2025-12-05T17:00:00.000Z",
+    "endDate": "2025-12-05T21:00:00.000Z",
+    "prize": 15000,
+    "status": "Pending",
+    "registrationLink": "https://wa.me/254720060752?text=I'm+registering+for+Fortnite+Battle+Royale+Clash"
+  },
+  {
+    "name": "PUBG Mobile International Cup",
+    "game": "PUBG Mobile",
+    "type": "battle-royale",
+    "location": "Dubai LAN Center",
+    "startDate": "2025-12-10T12:00:00.000Z",
+    "endDate": "2025-12-10T18:00:00.000Z",
+    "prize": 30000,
+    "status": "Pending",
+    "registrationLink": "https://wa.me/254720060752?text=I'm+registering+for+PUBG+Mobile+International+Cup"
+  },
+  {
+    "name": "League of Legends Rift Showdown",
+    "game": "League of Legends",
+    "type": "moba",
+    "location": "Seoul Esports Arena",
+    "startDate": "2025-12-15T10:00:00.000Z",
+    "endDate": "2025-12-15T20:00:00.000Z",
+    "prize": 50000,
+    "status": "Pending",
+    "registrationLink": "https://wa.me/254720060752?text=I'm+registering+for+League+of+Legends+Rift+Showdown"
+  },
+  {
+    "name": "Dota 2 Winter Invitational",
+    "game": "Dota 2",
+    "type": "moba",
+    "location": "Singapore Arena",
+    "startDate": "2025-12-20T11:00:00.000Z",
+    "endDate": "2025-12-20T21:00:00.000Z",
+    "prize": 40000,
+    "status": "Pending",
+    "registrationLink": "https://wa.me/254720060752?text=I'm+registering+for+Dota+2+Winter+Invitational"
+  },
+  {
+    "name": "Rocket League Galaxy Cup",
+    "game": "Rocket League",
+    "type": "sports",
+    "location": "Los Angeles",
+    "startDate": "2025-12-25T14:00:00.000Z",
+    "endDate": "2025-12-25T18:00:00.000Z",
+    "prize": 12000,
+    "status": "Pending",
+    "registrationLink": "https://wa.me/254720060752?text=I'm+registering+for+Rocket+League+Galaxy+Cup"
+  },
+  {
+    "name": "Mortal Kombat 1 Arena Clash",
+    "game": "Mortal Kombat 1",
+    "type": "fighting",
+    "location": "Online",
+    "startDate": "2026-01-05T15:00:00.000Z",
+    "endDate": "2026-01-05T17:00:00.000Z",
+    "prize": 6000,
+    "status": "Pending",
+    "registrationLink": "https://wa.me/254720060752?text=I'm+registering+for+Mortal+Kombat+1+Arena+Clash"
+  },
+  {
+    "name": "Street Fighter VI Open Series",
+    "game": "Street Fighter VI",
+    "type": "fighting",
+    "location": "Tokyo Dome",
+    "startDate": "2026-01-10T09:00:00.000Z",
+    "endDate": "2026-01-10T14:00:00.000Z",
+    "prize": 8000,
+    "status": "Pending",
+    "registrationLink": "https://wa.me/254720060752?text=I'm+registering+for+Street+Fighter+VI+Open+Series"
+  },
+  {
+    "name": "Overwatch 2 Winter Games",
+    "game": "Overwatch 2",
+    "type": "fps",
+    "location": "Online",
+    "startDate": "2026-01-15T16:00:00.000Z",
+    "endDate": "2026-01-15T20:00:00.000Z",
+    "prize": 10000,
+    "status": "Pending",
+    "registrationLink": "https://wa.me/254720060752?text=I'm+registering+for+Overwatch+2+Winter+Games"
+  },
+  {
+    "name": "Apex Legends Survival Cup",
+    "game": "Apex Legends",
+    "type": "battle-royale",
+    "location": "London Esports Hub",
+    "startDate": "2026-01-20T12:00:00.000Z",
+    "endDate": "2026-01-20T18:00:00.000Z",
+    "prize": 25000,
+    "status": "Pending",
+    "registrationLink": "https://wa.me/254720060752?text=I'm+registering+for+Apex+Legends+Survival+Cup"
+  },
+  {
+    "name": "Halo Infinite Championship",
+    "game": "Halo Infinite",
+    "type": "fps",
+    "location": "New York City",
+    "startDate": "2026-01-25T14:00:00.000Z",
+    "endDate": "2026-01-25T20:00:00.000Z",
+    "prize": 18000,
+    "status": "Pending",
+    "registrationLink": "https://wa.me/254720060752?text=I'm+registering+for+Halo+Infinite+Championship"
+  },
+  {
+    "name": "Minecraft Builders Cup",
+    "game": "Minecraft",
+    "type": "sandbox",
+    "location": "Online",
+    "startDate": "2026-02-01T10:00:00.000Z",
+    "endDate": "2026-02-01T14:00:00.000Z",
+    "prize": 4000,
+    "status": "Pending",
+    "registrationLink": "https://wa.me/254720060752?text=I'm+registering+for+Minecraft+Builders+Cup"
+  },
+  {
+    "name": "Clash Royale King’s Arena",
+    "game": "Clash Royale",
+    "type": "strategy",
+    "location": "Online",
+    "startDate": "2026-02-05T15:00:00.000Z",
+    "endDate": "2026-02-05T17:00:00.000Z",
+    "prize": 3000,
+    "status": "Pending",
+    "registrationLink": "https://wa.me/254720060752?text=I'm+registering+for+Clash+Royale+King’s+Arena"
+  },
+  {
+    "name": "Mobile Legends Grand Masters",
+    "game": "Mobile Legends",
+    "type": "moba",
+    "location": "Jakarta",
+    "startDate": "2026-02-10T12:00:00.000Z",
+    "endDate": "2026-02-10T18:00:00.000Z",
+    "prize": 15000,
+    "status": "Pending",
+    "registrationLink": "https://wa.me/254720060752?text=I'm+registering+for+Mobile+Legends+Grand+Masters"
+  },
+  {
+    "name": "Tekken 8 Iron Fist Tournament",
+    "game": "Tekken 8",
+    "type": "fighting",
+    "location": "Seoul",
+    "startDate": "2026-02-15T10:00:00.000Z",
+    "endDate": "2026-02-15T14:00:00.000Z",
+    "prize": 12000,
+    "status": "Pending",
+    "registrationLink": "https://wa.me/254720060752?text=I'm+registering+for+Tekken+8+Iron+Fist+Tournament"
+  },
+  {
+    "name": "Smash Bros Ultimate Showdown",
+    "game": "Super Smash Bros Ultimate",
+    "type": "fighting",
+    "location": "New York",
+    "startDate": "2026-02-20T13:00:00.000Z",
+    "endDate": "2026-02-20T18:00:00.000Z",
+    "prize": 9000,
+    "status": "Pending",
+    "registrationLink": "https://wa.me/254720060752?text=I'm+registering+for+Smash+Bros+Ultimate+Showdown"
+  },
+  {
+    "name": "Rainbow Six Siege Elite Cup",
+    "game": "Rainbow Six Siege",
+    "type": "fps",
+    "location": "Paris",
+    "startDate": "2026-02-25T16:00:00.000Z",
+    "endDate": "2026-02-25T20:00:00.000Z",
+    "prize": 20000,
+    "status": "Pending",
+    "registrationLink": "https://wa.me/254720060752?text=I'm+registering+for+Rainbow+Six+Siege+Elite+Cup"
+  }
+]
